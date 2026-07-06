@@ -3,8 +3,8 @@
 <head>
 <script>document.documentElement.classList.add("js");document.addEventListener("DOMContentLoaded",function(){requestAnimationFrame(function(){document.body.classList.add("loaded")})});</script>
 <meta charset="UTF-8">
-<meta name="build" content="2026-07-07-L4-PROOF">
-<!-- BUILD: 2026-07-07-L4-PROOF -->
+<meta name="build" content="2026-07-07-FINAL">
+<!-- BUILD: 2026-07-07-FINAL -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Iffy Khan | Dubai &amp; Abu Dhabi Property Advisory</title>
 <meta name="description" content="Buy, sell and invest in Dubai and Abu Dhabi property with Iffy Khan. Advisory-led guidance across off-plan, ready homes, resale and investment opportunities.">
@@ -41,17 +41,15 @@
   "sameAs": ["https://instagram.com/iffy_realestate"]
 }
 </script>
-<link rel="stylesheet" href="assets/css/site.css?v=proof-1">
+<link rel="stylesheet" href="assets/css/site.css?v=final-1">
 <style id="mobileAnimInline">
-#buildBadge{animation:badgePulse 1s ease-in-out infinite alternate}
-@keyframes badgePulse{from{transform:translateY(0)}to{transform:translateY(-8px)}}
 
 @media (max-width: 860px) {
   .morph { display: none !important; }
   .morph-static { display: block !important; }
   .hero-st { position: relative !important; overflow: hidden !important; }
   .hero-st img {
-    animation: mobileHeroProof 6s ease-in-out infinite alternate !important;
+    animation: mobileHeroLive 9s ease-in-out infinite alternate !important;
     transform-origin: center center !important;
     will-change: transform !important;
   }
@@ -69,9 +67,9 @@
   .vision .vis-item img { transform: scale(1.1); transition: transform 1.2s ease; }
   .vision .vis-item.in img, .vision .vis-item.vis img, .vision .vis-item.on img { transform: scale(1); }
 }
-@keyframes mobileHeroProof {
-  0% { transform: scale(1.18) translate3d(-3%, 2%, 0); }
-  100% { transform: scale(1.03) translate3d(3%, -2%, 0); }
+@keyframes mobileHeroLive {
+  0% { transform: scale(1.16) translate3d(-2.5%, 1.5%, 0); }
+  100% { transform: scale(1.03) translate3d(2.5%, -1.5%, 0); }
 }
 @keyframes mobileTextProof {
   to { opacity: 1; transform: translateY(0); }
@@ -85,25 +83,7 @@
 <body>
 
 <div class="sun" aria-hidden="true"></div>
-<div id="buildBadge" style="position:fixed;left:10px;bottom:10px;z-index:3000;background:#BFA16A;color:#0B0B0B;font:700 11px/1 system-ui;padding:7px 11px;border-radius:8px;letter-spacing:.06em">BUILD L2</div>
-<script>
-setTimeout(function(){
-  try{
-    var b=document.getElementById('buildBadge');
-    var img=document.querySelector('.hero-st img');
-    if(!img){b.textContent='L3 · NO IMG';return;}
-    var t1=getComputedStyle(img).transform;
-    setTimeout(function(){
-      var t2=getComputedStyle(img).transform;
-      var moving=(t1!==t2);
-      var loaded=(img.complete&&img.naturalWidth>0);
-      b.textContent='L3 · '+(moving?'MOVING':'FROZEN')+' · img:'+(loaded?'ok':'FAILED')+' · w'+innerWidth;
-      b.style.background=(moving&&loaded)?'#2E8B57':'#B3382C';
-      b.style.color='#fff';
-    },800);
-  }catch(e){}
-},1500);
-</script>
+
 
 <!-- LOADER -->
 <!-- NAV -->
