@@ -143,6 +143,8 @@ body.no-pin .morph{display:none}
 body.no-pin .morph-static{display:block}
 .morph-static .hero-st{position:relative;min-height:88svh;display:flex;align-items:flex-end;overflow:hidden;background:#0B0B0B}
 .morph-static .hero-st img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.12);animation:heroKb 8s var(--luxe) both,heroDrift 22s ease-in-out 8s infinite alternate}
+.morph-static .hero-st video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s var(--luxe)}
+.morph-static .hero-st video.playing{opacity:1}
 @keyframes heroKb{to{transform:scale(1.02)}}
 @keyframes heroDrift{from{transform:scale(1.02)}to{transform:scale(1.07) translateX(-1.5%)}}
 .morph-static .hero-st::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,8,.4),rgba(8,8,8,.66))}
@@ -504,4 +506,82 @@ figure.reveal.vis,.ed.reveal.vis{transform:none}
  .ab4{grid-template-columns:1fr}
  .ab-gallery{grid-template-columns:1fr 1fr}
  .ab-gallery figure:first-child{grid-column:1/-1}
+}
+
+
+/* ============ MOBILE HERO — EXPLICIT OVERRIDES (must win) ============ */
+@media (max-width: 860px) {
+  .morph { display: none !important; }
+  .morph-static { display: block !important; }
+  .hero-st { position: relative; overflow: hidden; }
+  .hero-st img {
+    animation: mobileHeroKenBurns 8s ease-out forwards, mobileHeroDrift 18s ease-in-out 8s infinite alternate !important;
+    transform-origin: center center;
+    will-change: transform;
+  }
+  .hero-st .eyebrow,
+  .hero-st .disp,
+  .hero-st p,
+  .hero-st .btn {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: mobileHeroTextIn .8s ease forwards !important;
+  }
+  .hero-st .eyebrow { animation-delay: .15s !important; }
+  .hero-st .disp { animation-delay: .3s !important; }
+  .hero-st p { animation-delay: .45s !important; }
+  .hero-st .btn { animation-delay: .6s !important; }
+}
+@media (min-width: 861px) {
+  .morph { display: block !important; }
+  .morph-static { display: none !important; }
+}
+@keyframes mobileHeroKenBurns {
+  from { transform: scale(1.12) translate3d(-1.5%, 1%, 0); }
+  to { transform: scale(1.02) translate3d(0, 0, 0); }
+}
+@keyframes mobileHeroDrift {
+  from { transform: scale(1.02) translate3d(0, 0, 0); }
+  to { transform: scale(1.08) translate3d(1.5%, -1%, 0); }
+}
+@keyframes mobileHeroTextIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-st img,
+  .hero-st .eyebrow,
+  .hero-st .disp,
+  .hero-st p,
+  .hero-st .btn {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ============ MOBILE VISION CARDS — EXPLICIT ============ */
+@media (max-width: 860px) {
+  .vision .vis-item {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .vision .vis-item.in,
+  .vision .vis-item.vis,
+  .vision .vis-item.on {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .vision .vis-item img {
+    transform: scale(1.06);
+    transition: transform 1.1s ease;
+  }
+  .vision .vis-item.in img,
+  .vision .vis-item.vis img,
+  .vision .vis-item.on img {
+    transform: scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vision .vis-item, .vision .vis-item img { opacity: 1 !important; transform: none !important; transition: none !important; }
 }

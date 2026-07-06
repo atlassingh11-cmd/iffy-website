@@ -3,8 +3,8 @@
 <head>
 <script>document.documentElement.classList.add("js");document.addEventListener("DOMContentLoaded",function(){requestAnimationFrame(function(){document.body.classList.add("loaded")})});</script>
 <meta charset="UTF-8">
-<meta name="build" content="2026-07-06-K">
-<!-- BUILD: 2026-07-06-K -->
+<meta name="build" content="2026-07-07-M">
+<!-- BUILD: 2026-07-07-M -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Iffy Khan | Dubai &amp; Abu Dhabi Property Advisory</title>
 <meta name="description" content="Buy, sell and invest in Dubai and Abu Dhabi property with Iffy Khan. Advisory-led guidance across off-plan, ready homes, resale and investment opportunities.">
@@ -41,7 +41,7 @@
   "sameAs": ["https://instagram.com/iffy_realestate"]
 }
 </script>
-<link rel="stylesheet" href="assets/css/site.css?v=mobile-anim-3">
+<link rel="stylesheet" href="assets/css/site.css?v=mobile-anim-5">
 </head>
 <body>
 
@@ -719,11 +719,11 @@ setComm(0);
 /* ---- Reveal ---- */
 if('IntersectionObserver' in window && !rm){
   var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');e.target.classList.add('in');io.unobserve(e.target);}});
   },{threshold:.1,rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.reveal, .ed, .vis-item').forEach(function(el){io.observe(el);});
 }else{
-  document.querySelectorAll('.reveal, .ed, .vis-item').forEach(function(el){el.classList.add('vis');});
+  document.querySelectorAll('.reveal, .ed, .vis-item').forEach(function(el){el.classList.add('vis');el.classList.add('in');});
 }
 
 /* ---- Testimonials ---- */
