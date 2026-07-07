@@ -3,8 +3,8 @@
 <head>
 <script>document.documentElement.classList.add("js");document.addEventListener("DOMContentLoaded",function(){requestAnimationFrame(function(){document.body.classList.add("loaded")})});</script>
 <meta charset="UTF-8">
-<meta name="build" content="2026-07-07-FINAL">
-<!-- BUILD: 2026-07-07-FINAL -->
+<meta name="build" content="2026-07-07-O">
+<!-- BUILD: 2026-07-07-O -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Iffy Khan | Dubai &amp; Abu Dhabi Property Advisory</title>
 <meta name="description" content="Buy, sell and invest in Dubai and Abu Dhabi property with Iffy Khan. Advisory-led guidance across off-plan, ready homes, resale and investment opportunities.">
@@ -41,41 +41,22 @@
   "sameAs": ["https://instagram.com/iffy_realestate"]
 }
 </script>
-<link rel="stylesheet" href="assets/css/site.css?v=final-1">
+<link rel="stylesheet" href="assets/css/site.css?v=n1">
 <style id="mobileAnimInline">
-
+/* Mobile runs the REAL cinematic morph hero (same as desktop, lighter pin).
+   .morph-static is only a fallback: reduced motion / no sticky support / JS failure (body.no-pin). */
 @media (max-width: 860px) {
-  .morph { display: none !important; }
-  .morph-static { display: block !important; }
-  .hero-st { position: relative !important; overflow: hidden !important; }
-  .hero-st img {
-    animation: mobileHeroLive 9s ease-in-out infinite alternate !important;
-    transform-origin: center center !important;
-    will-change: transform !important;
-  }
-  .hero-st .eyebrow, .hero-st .disp, .hero-st p, .hero-st .btn {
-    opacity: 0;
-    transform: translateY(22px);
-    animation: mobileTextProof .7s ease forwards !important;
-  }
-  .hero-st .eyebrow { animation-delay: .15s !important; }
-  .hero-st .disp { animation-delay: .35s !important; }
-  .hero-st p { animation-delay: .55s !important; }
-  .hero-st .btn { animation-delay: .75s !important; }
+  .mh .ctas .btn { width: 100%; justify-content: center; }
+  .mprog { right: 6vw; }
+  /* Palm Vision cards — proven mobile reveal */
   .vision .vis-item { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
   .vision .vis-item.in, .vision .vis-item.vis, .vision .vis-item.on { opacity: 1; transform: translateY(0); }
   .vision .vis-item img { transform: scale(1.1); transition: transform 1.2s ease; }
   .vision .vis-item.in img, .vision .vis-item.vis img, .vision .vis-item.on img { transform: scale(1); }
 }
-@keyframes mobileHeroLive {
-  0% { transform: scale(1.16) translate3d(-2.5%, 1.5%, 0); }
-  100% { transform: scale(1.03) translate3d(2.5%, -1.5%, 0); }
-}
-@keyframes mobileTextProof {
-  to { opacity: 1; transform: translateY(0); }
-}
 @media (prefers-reduced-motion: reduce) {
-  .hero-st img, .hero-st .eyebrow, .hero-st .disp, .hero-st p, .hero-st .btn { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .morph { display: none !important; }
+  .morph-static { display: block !important; }
   .vision .vis-item, .vision .vis-item img { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
 </style>
@@ -125,7 +106,7 @@
 <!-- CINEMATIC MORPH -->
 <section class="morph" id="morph" aria-label="A journey through Dubai">
   <div class="morph-stage" id="morphStage">
-    <div class="mscene" data-panx="-3" data-pany="1"><img src="https://images.unsplash.com/photo-1748373448914-1d7f882700e2?q=80&w=2200&auto=format&fit=crop" alt="Aerial view of Downtown Dubai and the Burj Khalifa above the Dubai Fountain" fetchpriority="high"><video id="heroVideo" muted loop playsinline preload="none" data-src="assets/videos/iffy-hero.mp4?v=2" aria-hidden="true" tabindex="-1"></video></div>
+    <div class="mscene" data-panx="-3" data-pany="1"><img src="https://images.unsplash.com/photo-1748373448914-1d7f882700e2?q=80&w=2200&auto=format&fit=crop" alt="Aerial view of Downtown Dubai and the Burj Khalifa above the Dubai Fountain" fetchpriority="high"><video id="heroVideo" src="assets/videos/iffy-hero.mp4?v=2" autoplay muted loop playsinline webkit-playsinline preload="auto" aria-hidden="true" tabindex="-1"></video></div>
     <div class="mscene" data-panx="3" data-pany="-1"><img loading="lazy" src="https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=2200&auto=format&fit=crop" alt="Dubai Marina waterfront towers"></div>
     <div class="mscene" data-panx="-2" data-pany="-2"><img loading="lazy" src="https://images.unsplash.com/photo-1526495124232-a04e1849168c?q=80&w=2200&auto=format&fit=crop" alt="Palm Jumeirah from the air"></div>
     <div class="mscene" data-panx="2" data-pany="2"><img loading="lazy" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2200&auto=format&fit=crop" alt="Bright luxury apartment interior with floor-to-ceiling windows"></div>
@@ -666,19 +647,22 @@ if(rm||!supportsSticky){
   window.addEventListener('scroll',morphScroll,{passive:true});
   window.addEventListener('resize',morphScroll);
   morphScroll();
-  /* hero video: fades in over the first scene once it can play */
+  /* hero video: src is inline in HTML (native autoplay). JS only handles fade-in, retry nudges and clean failure. */
   (function(){
     var v=document.getElementById('heroVideo');
     if(!v)return;
     if(rm){v.remove();return;}
-    if(!window.matchMedia('(min-width:861px)').matches){v.remove();heroVid=null;return;}
     v.muted=true;
-    v.src=v.dataset.src;
-    v.addEventListener('canplay',function(){
-      v.play().then(function(){v.classList.add('playing');heroVid=v;}).catch(function(){});
-    });
+    function show(){v.classList.add('playing');heroVid=v;}
+    v.addEventListener('playing',show);
+    v.addEventListener('timeupdate',function(){if(v.currentTime>0)show();});
+    function nudge(){var p=v.play();if(p&&p.catch)p.catch(function(){});}
+    v.addEventListener('canplay',nudge);
+    document.addEventListener('touchstart',nudge,{once:true,passive:true});
+    document.addEventListener('click',nudge,{once:true});
+    document.addEventListener('visibilitychange',function(){if(!document.hidden&&v.paused)nudge();});
     v.addEventListener('error',function(){if(v.parentNode)v.parentNode.removeChild(v);heroVid=null;});
-    v.load();
+    nudge();
   })();
 }
 onNav();
