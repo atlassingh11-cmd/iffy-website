@@ -27,6 +27,7 @@
   --ease:cubic-bezier(.22,.9,.24,1);
   --luxe:cubic-bezier(.16,1,.3,1);
   --nav-h:84px;
+  --secpad:clamp(4rem,8vw,7rem);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -36,7 +37,11 @@ a{color:inherit;text-decoration:none}
 ul{list-style:none}
 ::selection{background:var(--gold);color:#0B0B0B}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
-section[id]{scroll-margin-top:calc(var(--nav-h) + 16px)}
+/* Anchor landing: single source of truth (native scrolling honours this, and the
+   menu JS uses scrollIntoView which honours it too — no double offset).
+   The margin deducts the section's own top padding so the HEADING, not the
+   section box, ends up ~24px below the fixed header. */
+section[id]{scroll-margin-top:max(12px,calc(var(--nav-h) + 14px - var(--secpad)))}
 #top{scroll-margin-top:0}
 .js noscript{display:none}
 h1,h2,h3,.disp{font-family:var(--f-disp);font-weight:600;letter-spacing:-.03em;color:var(--char);line-height:1.06}
@@ -53,7 +58,7 @@ header{position:relative;z-index:130}
 .eyebrow{display:inline-flex;align-items:center;gap:.8rem;font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600}
 .eyebrow::before{content:"";width:26px;height:1px;background:var(--bronze)}
 .eyebrow.center{justify-content:center}
-.section{padding:clamp(4rem,8vw,7rem) 0;position:relative}
+.section{padding:var(--secpad) 0;position:relative}
 .s-head{max-width:760px;margin-bottom:clamp(2rem,4vw,3.5rem)}
 .s-head.center{margin-inline:auto;text-align:center}
 .s-head h2{font-size:clamp(2.3rem,4.8vw,3.8rem);margin:1.2rem 0 1rem;max-width:20ch}
@@ -84,6 +89,12 @@ header{position:relative;z-index:130}
 .brand{display:flex;flex-direction:column;gap:.28rem}
 .brand .b1{font-family:var(--f-disp);font-size:1rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--char);transition:color .4s;line-height:1}
 .brand .b2{font-size:.5rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:600;transition:color .4s;line-height:1}
+.b2 .b2-loc{white-space:nowrap}
+@media(max-width:860px){
+  /* strapline too wide for the mobile header on one line — stack it cleanly */
+  .brand .b2-dot{display:none}
+  .brand .b2-loc{display:block;margin-top:.3rem}
+}
 .nav-links{display:flex;gap:2.2rem;align-items:center}
 .nav-links a{font-size:.84rem;color:var(--char-2);transition:color .3s;position:relative;padding:.3rem 0}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold);transition:width .45s var(--ease)}
@@ -411,10 +422,12 @@ footer{padding:3.6rem 0 2.4rem;background:#080808;border-top:1px solid var(--lin
 
 /* ============ REVEAL ============ */
 .js .reveal{opacity:0;transform:translateY(30px);transition:opacity 1.3s var(--luxe),transform 1.3s var(--luxe)}
-.reveal.vis{opacity:1;transform:none}
+/* .js prefix keeps this winning over the mobile .js .reveal override below —
+   without it, revealed elements on mobile stay translated 24px down forever */
+.reveal.vis,.js .reveal.vis{opacity:1;transform:none}
 .reveal[data-d="1"]{transition-delay:.16s}.reveal[data-d="2"]{transition-delay:.32s}.reveal[data-d="3"]{transition-delay:.48s}
 .js figure.reveal,.js .ed.reveal{transform:translateY(30px) scale(.985)}
-figure.reveal.vis,.ed.reveal.vis{transform:none}
+figure.reveal.vis,.ed.reveal.vis,.js figure.reveal.vis,.js .ed.reveal.vis{transform:none}
 
 /* ============ BUYER TOOLS ============ */
 .tools{background:var(--sand);border-block:1px solid var(--line-2)}
