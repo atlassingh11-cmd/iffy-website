@@ -3,8 +3,8 @@
 <head>
 <script>document.documentElement.classList.add("js")</script>
 <meta charset="UTF-8">
-<meta name="build" content="2026-07-07-T">
-<!-- BUILD: 2026-07-07-T -->
+<meta name="build" content="2026-07-09-U">
+<!-- BUILD: 2026-07-09-U (mobile bug-fix build) -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Iffy Khan | Dubai &amp; Abu Dhabi Property Specialist</title>
 <meta name="description" content="Learn about Iffy Khan, a Dubai and Abu Dhabi property advisor helping buyers, sellers and investors compare off-plan, ready homes, resale and investment opportunities with clarity.">
@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/site.css?v=t1">
+<link rel="stylesheet" href="assets/css/site.css?v=u1">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Iffy Khan","jobTitle":"Dubai & Abu Dhabi Property Advisor","worksFor":{"@type":"Organization","name":"Kamani Living"},"telephone":"+971585802689","email":"iffy@kamaniliving.com","areaServed":["Dubai","Abu Dhabi"],"knowsAbout":["Off-plan property","Dubai secondary market","Property investment","Residential resale"],"sameAs":["https://instagram.com/iffy_realestate"],"url":"https://iffykhan.ae/about.html"}</script>
 </head>
 <body class="loaded">
@@ -204,15 +204,37 @@ var nav=document.querySelector('header');
 function onScroll(){if(nav)nav.classList.toggle('scrolled',window.scrollY>40);}
 window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 var burger=document.getElementById('burger'),menu=document.getElementById('mMenu');
+/* position:fixed body lock — overflow:hidden alone does not stop iOS background scroll */
+var lockY=0,locked=false;
+function lockBody(){if(locked)return;locked=true;lockY=window.pageYOffset;
+ document.body.style.position='fixed';document.body.style.top=(-lockY)+'px';
+ document.body.style.left='0';document.body.style.right='0';document.body.style.width='100%';}
+function unlockBody(){if(!locked)return;locked=false;
+ document.body.style.position='';document.body.style.top='';
+ document.body.style.left='';document.body.style.right='';document.body.style.width='';
+ var d=document.documentElement,prev=d.style.scrollBehavior;
+ d.style.scrollBehavior='auto';window.scrollTo(0,lockY);d.style.scrollBehavior=prev;}
 function toggleMenu(force){if(!burger||!menu)return;var open=force!==undefined?force:burger.getAttribute('aria-expanded')!=='true';
  burger.setAttribute('aria-expanded',open);burger.setAttribute('aria-label',open?'Close menu':'Open menu');
- menu.classList.toggle('open',open);document.body.classList.toggle('menu-open',open);document.body.style.overflow=open?'hidden':'';}
+ menu.classList.toggle('open',open);document.body.classList.toggle('menu-open',open);
+ if(open)lockBody();else unlockBody();}
 if(burger&&menu){burger.addEventListener('click',function(){toggleMenu();});
 menu.addEventListener('click',function(e){if(e.target===menu)toggleMenu(false);});
 menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){toggleMenu(false);});});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')toggleMenu(false);});}
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:.12});
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+/* Float WA: show after first screen, hide over the footer so it never covers
+   the legal lines or the Local Foundary credit (this logic was missing on this page) */
+(function(){
+var fwa=document.getElementById('floatWa');if(!fwa)return;
+var footInView=false;
+function onWa(){fwa.classList.toggle('show',window.scrollY>window.innerHeight*0.8&&!footInView);}
+window.addEventListener('scroll',onWa,{passive:true});
+var ft=document.querySelector('footer');
+if(ft&&'IntersectionObserver' in window)new IntersectionObserver(function(es){footInView=es[es.length-1].isIntersecting;onWa();},{threshold:0}).observe(ft);
+onWa();
+})();
 document.querySelectorAll('img[src^="assets/"]').forEach(function(im){im.addEventListener('error',function(){
  im.onerror=null;var f=(im.getAttribute('src')||'').split('/').pop();
  im.src='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800"><rect width="100%" height="100%" fill="#ECE7DE"/><text x="50%" y="50%" text-anchor="middle" font-family="system-ui" font-size="30" fill="#8A8478">Image file missing: '+f+'</text></svg>');});});

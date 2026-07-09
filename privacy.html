@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="build" content="2026-07-07-T">
-<!-- BUILD: 2026-07-07-T -->
+<meta name="build" content="2026-07-09-U">
+<!-- BUILD: 2026-07-09-U (mobile bug-fix build) -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy | Iffy Khan</title>
 <meta name="description" content="How enquiries made through iffykhan.ae are handled.">
@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=t1">
+<link rel="stylesheet" href="assets/css/site.css?v=u1">
 </head>
 <body class="loaded">
 <header class="nav" id="nav">
@@ -87,9 +87,20 @@ var nav=document.querySelector('header');
 function onScroll(){if(nav)nav.classList.toggle('scrolled',window.scrollY>40);}
 window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 var burger=document.getElementById('burger'),menu=document.getElementById('mMenu');
+/* position:fixed body lock — overflow:hidden alone does not stop iOS background scroll */
+var lockY=0,locked=false;
+function lockBody(){if(locked)return;locked=true;lockY=window.pageYOffset;
+ document.body.style.position='fixed';document.body.style.top=(-lockY)+'px';
+ document.body.style.left='0';document.body.style.right='0';document.body.style.width='100%';}
+function unlockBody(){if(!locked)return;locked=false;
+ document.body.style.position='';document.body.style.top='';
+ document.body.style.left='';document.body.style.right='';document.body.style.width='';
+ var d=document.documentElement,prev=d.style.scrollBehavior;
+ d.style.scrollBehavior='auto';window.scrollTo(0,lockY);d.style.scrollBehavior=prev;}
 function toggleMenu(force){if(!burger||!menu)return;var open=force!==undefined?force:burger.getAttribute('aria-expanded')!=='true';
  burger.setAttribute('aria-expanded',open);burger.setAttribute('aria-label',open?'Close menu':'Open menu');
- menu.classList.toggle('open',open);document.body.classList.toggle('menu-open',open);document.body.style.overflow=open?'hidden':'';}
+ menu.classList.toggle('open',open);document.body.classList.toggle('menu-open',open);
+ if(open)lockBody();else unlockBody();}
 if(burger&&menu){burger.addEventListener('click',function(){toggleMenu();});
 menu.addEventListener('click',function(e){if(e.target===menu)toggleMenu(false);});
 menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){toggleMenu(false);});});
