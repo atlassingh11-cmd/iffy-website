@@ -7,8 +7,8 @@
    Any host that is not iffykhan.ae (e.g. *.workers.dev test URLs) gets a noindex
    robots meta injected, so the test site cannot enter Google. No change needed at launch. */
 (function(){var h=location.hostname;if(!/(^|\.)iffykhan\.ae$/.test(h)){var m=document.createElement('meta');m.name='robots';m.content='noindex,nofollow';document.head.appendChild(m);}})();</script>
-<meta name="build" content="2026-07-10-U9">
-<!-- BUILD: 2026-07-10-U9 (U8 + Property Routes mobile readability fix) -->
+<meta name="build" content="2026-07-10-U10">
+<!-- BUILD: 2026-07-10-U10 (visible mobile Palm animation) -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Iffy Khan | Dubai &amp; Abu Dhabi Property Advisory</title>
 <meta name="description" content="Buy, sell and invest in Dubai and Abu Dhabi property with Iffy Khan. Advisory-led guidance across off-plan, ready homes, resale and investment opportunities.">
@@ -49,7 +49,7 @@
   "sameAs": ["https://instagram.com/iffy_realestate"]
 }
 </script>
-<link rel="stylesheet" href="assets/css/site.css?v=u9">
+<link rel="stylesheet" href="assets/css/site.css?v=u10">
 <style id="mobileAnimInline">
 /* Mobile runs the REAL cinematic morph hero (same as desktop, lighter pin).
    .morph-static is only a fallback: reduced motion / no sticky support / JS failure (body.no-pin). */
@@ -639,7 +639,7 @@ menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',functi
       e.preventDefault();
       /* perceived speed: reveal the destination content and start its image
          fetches BEFORE we move, so the section is already there on landing */
-      t.querySelectorAll('.reveal,.ed,.vis-item').forEach(function(el){el.classList.add('vis','in');});
+      t.querySelectorAll('.reveal,.ed,.vis-item').forEach(function(el){el.classList.add('vis','in','vshow');});
       t.querySelectorAll('img[loading="lazy"]').forEach(function(im){im.loading='eager';});
       if(t.id==='communities'&&typeof loadComm==='function'){loadComm(curComm);loadComm(curComm+1);loadComm(curComm-1);}
       var mob=window.matchMedia('(max-width:860px)').matches;
@@ -850,6 +850,20 @@ setComm(0);
   window.addEventListener('scroll',onScroll,{passive:true});
   window.addEventListener('resize',onScroll);
   onScroll();
+})();
+
+/* ---- Palm Vision mobile: dedicated entrance observer. Fires at 60% card
+   visibility so the caption slide/zoom happens ON SCREEN (the shared reveal
+   observer fires at 10%, which finished the animation below the fold). ---- */
+(function(){
+  if(!window.matchMedia('(max-width:860px)').matches)return;
+  if(rm){return;} /* reduced-motion CSS forces cards fully visible */
+  var items=document.querySelectorAll('.vis-item');
+  if(!('IntersectionObserver' in window)){items.forEach(function(el){el.classList.add('vshow');});return;}
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vshow');io.unobserve(e.target);}});
+  },{threshold:0.6});
+  items.forEach(function(el){io.observe(el);});
 })();
 
 /* ---- Palm Vision: fetch its three images just before the section arrives ---- */

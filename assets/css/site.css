@@ -264,11 +264,16 @@ body.no-pin .morph-static{display:block}
   .vis-stage{position:static;height:auto;overflow:visible;background:none;display:grid;gap:1rem;width:90vw;margin-inline:auto}
   .vis-item{position:relative;opacity:1;border-radius:var(--r);overflow:hidden;aspect-ratio:4/3}
   .vis-item img{position:absolute;inset:0;height:100%}
-  .js .vis-item img{transform:scale(1.07);transition:transform 1.3s var(--luxe)}
-  .js .vis-item.in img{transform:scale(1)}
+  /* cinematic entrance keyed to .vshow — added by a dedicated observer at 60%
+     visibility, so the motion happens while the card is actually on screen
+     (the shared reveal observer fires at 10%, before captions are visible) */
+  .js .vis-item{opacity:.45;transition:opacity .6s var(--luxe)}
+  .js .vis-item.vshow{opacity:1}
+  .js .vis-item img{transform:scale(1.12);transition:transform 1.2s var(--luxe)}
+  .js .vis-item.vshow img{transform:scale(1)}
   .vis-cap{left:1rem;right:1rem;bottom:1rem;max-width:none}
-  .js .vis-item .vis-cap{opacity:0;transform:translateY(18px);transition:opacity .8s var(--luxe) .12s,transform .8s var(--luxe) .12s}
-  .js .vis-item.in .vis-cap{opacity:1;transform:none}
+  .js .vis-item .vis-cap{opacity:0;transform:translateY(26px);transition:opacity .7s var(--luxe) .1s,transform .7s var(--luxe) .1s}
+  .js .vis-item.vshow .vis-cap{opacity:1;transform:none}
   .vis-cap p{font-size:1.08rem}
   /* progress label inline with the card kicker (the ::after is the bronze
      divider on desktop - restyle it as inline text here) */
