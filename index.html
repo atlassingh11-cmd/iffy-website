@@ -7,8 +7,8 @@
    Any host that is not iffykhan.ae (e.g. *.workers.dev test URLs) gets a noindex
    robots meta injected, so the test site cannot enter Google. No change needed at launch. */
 (function(){var h=location.hostname;if(!/(^|\.)iffykhan\.ae$/.test(h)){var m=document.createElement('meta');m.name='robots';m.content='noindex,nofollow';document.head.appendChild(m);}})();</script>
-<meta name="build" content="2026-07-10-U11">
-<!-- BUILD: 2026-07-10-U11 (mobile Palm: mini pinned crossfade like the hero) -->
+<meta name="build" content="2026-07-10-U12">
+<!-- BUILD: 2026-07-10-U12 (hotfix: scroll cue, hero ghosting, RERA line, About CTA) -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Iffy Khan | Dubai &amp; Abu Dhabi Property Advisory</title>
 <meta name="description" content="Buy, sell and invest in Dubai and Abu Dhabi property with Iffy Khan. Advisory-led guidance across off-plan, ready homes, resale and investment opportunities.">
@@ -49,7 +49,7 @@
   "sameAs": ["https://instagram.com/iffy_realestate"]
 }
 </script>
-<link rel="stylesheet" href="assets/css/site.css?v=u11">
+<link rel="stylesheet" href="assets/css/site.css?v=u12">
 <style id="mobileAnimInline">
 /* Mobile runs the REAL cinematic morph hero (same as desktop, lighter pin).
    .morph-static is only a fallback: reduced motion / no sticky support / JS failure (body.no-pin). */
@@ -541,10 +541,9 @@
       <span>Iffy Khan · Property advisory through Kamani Living · Office 104, Building 4, Dubai Hills Business Park, Dubai, UAE</span>
       <span>Information on this site is for guidance only and is not financial advice. No returns are guaranteed.</span>
       <!-- LEGAL DETAILS:
-     Iffy licence no. 91889.
-     Kamani Living ORN 1247700.
+     Iffy RERA no. 38860 (confirmed by client). Licence no. 91889. Kamani Living ORN 1247700.
      No Trakheesi/Madmoun permit number provided yet, so no visible permit wording is shown. -->
-      <span>Iffy Khan licence no. 91889. Kamani Living ORN 1247700.</span>
+      <span>Iffy Khan RERA no. 38860. Licence no. 91889. Kamani Living ORN 1247700.</span>
       <span class="foot-credit">Designed &amp; built by <a href="https://www.localfoundary.co.uk" target="_blank" rel="noopener">Local Foundary</a></span>
     </div>
   </div>
@@ -664,6 +663,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')toggleMenu(f
 /* ---- Cinematic morph ---- */
 var scenes=document.querySelectorAll('.mscene');
 var mHero=document.getElementById('mHero');
+var cue=document.querySelector('.scroll-cue');
 var caps=[null,document.getElementById('mcap1'),document.getElementById('mcap2'),document.getElementById('mcap3')];
 var segs=[document.getElementById('seg0'),document.getElementById('seg1'),document.getElementById('seg2'),document.getElementById('seg3')];
 var N=scenes.length;
@@ -682,6 +682,8 @@ if(rm||!supportsSticky){
       if(r.height===0){mt=false;return;}
       var total=r.height-window.innerHeight;
       var p=clamp(-r.top/total,0,1);
+      /* scroll cue: gone almost immediately once scrolling starts (~3% progress) */
+      if(cue)cue.style.opacity=String(clamp(1-p*20,0,1));
       var f=p*(N-1);               /* 0..3 scene position */
       scenes.forEach(function(s,i){
         /* smoothstep-eased stacked cross-dissolve: no dark dip, no abrupt cuts */
@@ -709,11 +711,13 @@ if(rm||!supportsSticky){
           heroVid.style.opacity = f>0.02 ? String(clamp(1-f,0,1)) : '';
         }
       }
-      /* headline fades out through scene 1 */
-      var hFade=clamp(1-f*1.6,0,1);
+      /* headline fades out quickly and is fully HIDDEN once gone - no ghosting
+         behind later scenes */
+      var hFade=clamp(1-f*2.6,0,1);
       mHero.style.opacity=hFade;
       mHero.style.transform='translateY('+((1-hFade)*30)+'px)';
       mHero.style.pointerEvents=hFade<0.3?'none':'';
+      mHero.style.visibility=hFade<=0?'hidden':'';
       /* captions */
       for(var i=1;i<N;i++){
         var vis=clamp(1-Math.abs(f-i)*2.2,0,1);

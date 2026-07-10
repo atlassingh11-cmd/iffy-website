@@ -148,7 +148,7 @@ body.menu-open .burger span{background:var(--char)!important}
 .mprog .seg{width:1px;height:34px;background:rgba(244,239,230,.25);position:relative;overflow:hidden}
 .mprog .seg i{position:absolute;inset:0;background:var(--gold);transform:scaleY(0);transform-origin:top}
 .mprog .seg.full i{transform:scaleY(1)}
-.scroll-cue{position:absolute;bottom:1.4rem;left:50%;transform:translateX(-50%);z-index:6;display:flex;flex-direction:column;align-items:center;gap:.55rem;color:rgba(244,239,230,.6);font-size:.6rem;letter-spacing:.32em;text-transform:uppercase}
+.scroll-cue{position:absolute;bottom:1.4rem;left:50%;transform:translateX(-50%);z-index:6;display:flex;flex-direction:column;align-items:center;gap:.55rem;color:rgba(244,239,230,.6);font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;pointer-events:none;transition:opacity .3s var(--ease)}
 .scroll-cue .ln{width:1px;height:40px;background:linear-gradient(var(--gold),transparent);animation:cue 2.6s var(--ease) infinite}
 @keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 .js .reveal-h{opacity:0}
