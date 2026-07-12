@@ -3,12 +3,8 @@
 <head>
 <script>document.documentElement.classList.add("js");document.addEventListener("DOMContentLoaded",function(){requestAnimationFrame(function(){document.body.classList.add("loaded")})});</script>
 <meta charset="UTF-8">
-<script>/* TEST-DEPLOYMENT INDEXING GUARD — auto-disables on the final domain.
-   Any host that is not iffykhan.ae (e.g. *.workers.dev test URLs) gets a noindex
-   robots meta injected, so the test site cannot enter Google. No change needed at launch. */
-(function(){var h=location.hostname;if(!/(^|\.)iffykhan\.ae$/.test(h)){var m=document.createElement('meta');m.name='robots';m.content='noindex,nofollow';document.head.appendChild(m);}})();</script>
-<meta name="build" content="2026-07-11-U17">
-<!-- BUILD: 2026-07-11-U17 (area guides + factual hotfix; CSS unchanged at u16) -->
+<script>(function(){var h=location.hostname;if(!/(^|\.)iffykhan\.ae$/.test(h)){var m=document.createElement('meta');m.name='robots';m.content='noindex,nofollow';document.head.appendChild(m);}})();</script>
+<meta name="build" content="2026-07-11-U18">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Iffy Khan | Dubai &amp; Abu Dhabi Property Advisory</title>
 <meta name="description" content="Buy, sell and invest in Dubai and Abu Dhabi property with Iffy Khan. Advisory-led guidance across off-plan, ready homes, resale and investment opportunities.">
@@ -49,7 +45,7 @@
   "sameAs": ["https://instagram.com/iffy_realestate"]
 }
 </script>
-<link rel="stylesheet" href="assets/css/site.css?v=u16">
+<link rel="stylesheet" href="assets/css/site.css?v=u18">
 <style id="mobileAnimInline">
 /* Mobile runs the REAL cinematic morph hero (same as desktop, lighter pin).
    .morph-static is only a fallback: reduced motion / no sticky support / JS failure (body.no-pin). */
@@ -69,8 +65,6 @@
 <div class="sun" aria-hidden="true"></div>
 
 
-<!-- LOADER -->
-<!-- NAV -->
 <header class="nav over" id="nav">
   <div class="nav-in">
     <a href="#top" class="brand" aria-label="Iffy Khan home">
@@ -106,7 +100,6 @@
 
 <main id="top">
 
-<!-- CINEMATIC MORPH -->
 <section class="morph" id="morph" aria-label="A journey through Dubai">
   <div class="morph-stage" id="morphStage">
     <div class="mscene" data-panx="-1.5" data-pany="0.5"><img src="assets/images/hero-downtown.webp" alt="Aerial view of Downtown Dubai and the Burj Khalifa above the Dubai Fountain" fetchpriority="high" onerror="window.imgMissing?imgMissing(this):(this.alt+=' [missing]')"><video id="heroVideo" src="assets/videos/iffy-hero.mp4?v=2" autoplay muted loop playsinline webkit-playsinline preload="auto" aria-hidden="true" tabindex="-1"></video></div>
@@ -142,7 +135,6 @@
   </div>
 </section>
 
-<!-- Static fallback -->
 <div class="morph-static">
   <section class="hero-st">
     <img src="assets/images/hero-downtown.webp" alt="Aerial view of Downtown Dubai and the Burj Khalifa above the Dubai Fountain">
@@ -158,7 +150,6 @@
   </section>
 </div>
 
-<!-- BUY / SELL / INVEST -->
 <section class="section services" id="services">
   <div class="wrap">
     <div class="s-head">
@@ -173,7 +164,6 @@
   </div>
 </section>
 
-<!-- MEET IFFY -->
 <section class="section meet" id="meet">
   <div class="wrap meet-grid">
     <div class="meet-photo reveal">
@@ -203,7 +193,6 @@
   </div>
 </section>
 
-<!-- FROM VISION TO REALITY -->
 <section class="section vision" id="vision">
   <div class="wrap">
     <div class="s-head">
@@ -234,13 +223,13 @@
   </div>
 </section>
 
-<!-- COMMUNITIES -->
 <section class="section comm" id="communities">
   <div class="wrap">
     <div class="s-head">
       <span class="eyebrow reveal">The Areas</span>
       <h2 class="reveal" data-d="1">Know the area before you choose it.</h2>
       <p class="reveal" data-d="2">Each area behaves differently. The right choice depends on your budget, lifestyle, timeline and exit route.</p>
+      <a href="/areas" class="plink reveal" data-d="2" style="display:inline-block;margin-top:.8rem">Browse the full area guides</a>
     </div>
     <div class="comm-wrap">
       <p class="comm-hint">Tap an area to see Iffy’s view — 8 areas covered.</p>
@@ -266,7 +255,6 @@
   </div>
 </section>
 
-<!-- DEVELOPMENTS -->
 <section class="section devs-ed" id="developments">
   <div class="wrap">
     <div class="s-head">
@@ -281,7 +269,6 @@
         <a href="https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27d%20like%20to%20ask%20about%20The%20Wilds%20by%20Aldar." target="_blank" rel="noopener" class="plink">Discuss this route with Iffy</a>
       </div>
     </article>
-    <!-- TODO: stock interior stand-in — swap for a real The Edit / Dubai Design District photo when available -->
     <article class="ed reveal">
       <img loading="lazy" width="1600" height="1067" src="assets/images/the-edit.webp" alt="Contemporary designer apartment interior" onerror="window.imgMissing?imgMissing(this):(this.alt+=' [missing]')">
       <div class="ed-body">
@@ -313,7 +300,6 @@
   </div>
 </section>
 
-<!-- BUYER TOOLS -->
 <section class="section tools" id="tools">
   <noscript><div class="wrap"><p>These interactive tools require JavaScript. Please contact Iffy directly on <a href="tel:+971585802689">+971 58 580 2689</a>.</p></div></noscript>
   <div class="wrap">
@@ -329,7 +315,6 @@
       <button type="button" data-tool="tOffplan" role="tab" aria-selected="false">Off-Plan vs Ready</button>
     </div>
 
-    <!-- AREA FINDER -->
     <div class="tool-panel on reveal" data-d="1" id="tArea">
       <p class="tool-intro">Five questions. Your best-fit areas.</p>
       <div class="tq"><span class="tq-label">01 &middot; Are you buying to live or invest?</span>
@@ -347,7 +332,6 @@
       <div class="tool-result" id="areaResult" aria-live="polite"></div>
     </div>
 
-    <!-- BUDGET CALCULATOR -->
     <div class="tool-panel reveal" data-d="1" id="tBudget">
       <p class="tool-intro">Your day-one cash, estimated.</p>
       <div class="tool-fields">
@@ -362,7 +346,6 @@
       <div class="tool-result" id="bcResult" aria-live="polite"></div>
     </div>
 
-    <!-- OFF-PLAN VS READY -->
     <div class="tool-panel reveal" data-d="1" id="tOffplan">
       <p class="tool-intro">Five questions. Your route.</p>
       <div class="tq"><span class="tq-label">01 &middot; When do you need the property?</span>
@@ -383,7 +366,6 @@
   </div>
 </section>
 
-<!-- SELLING -->
 <section class="section selling" id="selling">
   <div class="wrap">
     <span class="eyebrow reveal">For Sellers</span>
@@ -393,7 +375,6 @@
   </div>
 </section>
 
-<!-- PROCESS -->
 <section class="section journey" id="journey">
   <div class="wrap">
     <div class="s-head center">
@@ -410,7 +391,6 @@
   </div>
 </section>
 
-<!-- WHY -->
 <section class="section" id="why">
   <div class="wrap">
     <div class="s-head">
@@ -451,7 +431,6 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section class="section tsl-sec" id="testimonials">
   <div class="wrap">
     <div class="s-head" style="display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;max-width:none;flex-wrap:wrap">
@@ -473,7 +452,6 @@
   </div>
 </section>
 
-<!-- PARTNERS -->
 <section class="partners" aria-label="Developers and communities Iffy can help clients compare">
   <div class="lbl"><span class="eyebrow center">Developers &amp; communities Iffy can help clients compare</span></div>
   <div class="mq" id="mq">
@@ -482,7 +460,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="section contact" id="contact">
   <div class="wrap contact-grid">
     <div class="contact-copy">
@@ -548,10 +525,6 @@
       <span>© 2026 Iffy Khan. All rights reserved</span>
       <span>Iffy Khan · Property advisory through Kamani Living · Office 104, Building 4, Dubai Hills Business Park, Dubai, UAE</span>
       <span>Information on this site is for guidance only and is not financial advice. No returns are guaranteed.</span>
-      <!-- LEGAL DETAILS:
-     Iffy licence no. 91889.
-     Kamani Living ORN 1247700.
-     Do not show RERA no. 38860 on the visible website. -->
       <span>Iffy Khan licence no. 91889. Kamani Living ORN 1247700.</span>
       <span class="foot-credit">Designed &amp; built by <a href="https://www.localfoundary.co.uk" target="_blank" rel="noopener">Local Foundary</a></span>
     </div>

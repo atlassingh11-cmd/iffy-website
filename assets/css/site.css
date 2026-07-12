@@ -635,3 +635,14 @@ figure.reveal.vis,.ed.reveal.vis,.js figure.reveal.vis,.js .ed.reveal.vis{opacit
   .area-hero{min-height:52svh}
   .area-hero .wrap{padding:8rem 0 2.4rem}
 }
+
+/* ============ AREAS HUB ============ */
+.hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.4rem}
+.hub-card{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--glass);display:flex;flex-direction:column;transition:transform .6s var(--luxe),border-color .4s,box-shadow .6s var(--luxe)}
+.hub-card:hover{transform:translateY(-6px);border-color:rgba(191,161,106,.45);box-shadow:var(--sh-md)}
+.hub-card img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.hub-card .hc-body{padding:1.25rem 1.35rem 1.45rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.hub-card .hc-city{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.hub-card h2{font-size:1.35rem}
+.hub-card p{color:var(--char-3);font-size:.92rem;line-height:1.55;flex:1}
+.hub-card .plink{margin-top:.4rem}
