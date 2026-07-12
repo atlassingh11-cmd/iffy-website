@@ -7,8 +7,8 @@
    Any host that is not iffykhan.ae (e.g. *.workers.dev test URLs) gets a noindex
    robots meta injected, so the test site cannot enter Google. No change needed at launch. */
 (function(){var h=location.hostname;if(!/(^|\.)iffykhan\.ae$/.test(h)){var m=document.createElement('meta');m.name='robots';m.content='noindex,nofollow';document.head.appendChild(m);}})();</script>
-<meta name="build" content="2026-07-10-U15">
-<!-- BUILD: 2026-07-10-U15 (final QA: form, AD wording+route, a11y, cue, h1) -->
+<meta name="build" content="2026-07-11-U17">
+<!-- BUILD: 2026-07-11-U17 (area guides + factual hotfix; CSS unchanged at u16) -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Iffy Khan | Dubai &amp; Abu Dhabi Property Advisory</title>
 <meta name="description" content="Buy, sell and invest in Dubai and Abu Dhabi property with Iffy Khan. Advisory-led guidance across off-plan, ready homes, resale and investment opportunities.">
@@ -49,7 +49,7 @@
   "sameAs": ["https://instagram.com/iffy_realestate"]
 }
 </script>
-<link rel="stylesheet" href="assets/css/site.css?v=u15">
+<link rel="stylesheet" href="assets/css/site.css?v=u16">
 <style id="mobileAnimInline">
 /* Mobile runs the REAL cinematic morph hero (same as desktop, lighter pin).
    .morph-static is only a fallback: reduced motion / no sticky support / JS failure (body.no-pin). */
@@ -253,6 +253,7 @@
             <div class="cc-view"><span class="cc-vlabel" id="ccViewLabel">Iffy's view</span>
               <p class="cc-vtext" id="ccView" aria-labelledby="ccViewLabel">Family tenants drive demand here. Buy on school runs and park access, not just the view.</p>
             </div>
+            <a id="ccGuide" class="plink" href="/areas/dubai-hills" style="margin-top:.7rem">Read the full area guide</a>
           </div>
         </div>
         <dl class="cc-facts reveal" data-d="2">
@@ -591,14 +592,14 @@ window.imgMissing=imgMissing;window.showMissingBar=showMissingBar;
 
 /* ---- Data ---- */
 var COMMS=[
- {n:"Dubai Hills",t:"Family Living",b:"Families and end-users who want space without leaving the city.",m:"Villas, townhouses and apartments around the golf course and parks.",w:"Dubai Hills Mall, schools and green space in one Emaar master community, between Downtown and Marina.",v:"Family tenants drive demand here. Buy on school runs and park access, not just the view.",alt:"Golf course fairways at Dubai Hills Estate",img:"assets/images/dubai-hills.webp"},
- {n:"Downtown Dubai",t:"Global Address",b:"Buyers who want the global address, and investors in short-let-friendly towers.",m:"High-rise apartments and branded residences around Burj Khalifa and Dubai Mall.",w:"The Fountain, the Boulevard and year-round visitor demand keep the district liquid.",v:"Downtown trades on recognition. The premium is real, so building quality and service charges decide the return.",alt:"Downtown Dubai skyline with Burj Khalifa",img:"assets/images/downtown.webp"},
- {n:"Dubai Marina",t:"Waterfront Yield",b:"Lifestyle buyers and investors wanting an established waterfront address.",m:"Apartments, penthouses and serviced residences.",w:"Marina Walk, JBR and the beach, tram and metro links, and deep tenant demand.",v:"Two similar towers can perform very differently. The building, the view line and the service charge make the deal.",alt:"Dubai Marina skyline and waterfront towers",img:"assets/images/dubai-marina.webp"},
- {n:"Business Bay",t:"City Value",b:"Investors and professionals who want Downtown adjacency at a different entry point.",m:"Mixed-use towers: apartments, hotel apartments and offices along the canal.",w:"Canal-side living minutes from Downtown and Sheikh Zayed Road, with strong short-let appeal.",v:"Supply is heavy here, so the gap between average and good buildings is wide. Selection matters more than the postcode.",alt:"Business Bay towers looking towards Burj Khalifa",img:"assets/images/business-bay.webp"},
+ {n:"Dubai Hills",u:"/areas/dubai-hills",t:"Family Living",b:"Families and end-users who want space without leaving the city.",m:"Villas, townhouses and apartments around the golf course and parks.",w:"Dubai Hills Mall, schools and green space in one Emaar master community, between Downtown and Marina.",v:"Family tenants drive demand here. Buy on school runs and park access, not just the view.",alt:"Golf course fairways at Dubai Hills Estate",img:"assets/images/dubai-hills.webp"},
+ {n:"Downtown Dubai",u:"/areas/downtown-dubai",t:"Global Address",b:"Buyers who want the global address, and investors in short-let-friendly towers.",m:"High-rise apartments and branded residences around Burj Khalifa and Dubai Mall.",w:"The Fountain, the Boulevard and year-round visitor demand keep the district liquid.",v:"Downtown trades on recognition. The premium is real, so building quality and service charges decide the return.",alt:"Downtown Dubai skyline with Burj Khalifa",img:"assets/images/downtown.webp"},
+ {n:"Dubai Marina",u:"/areas/dubai-marina",t:"Waterfront Yield",b:"Lifestyle buyers and investors wanting an established waterfront address.",m:"Apartments, penthouses and serviced residences.",w:"Marina Walk, JBR and the beach, tram and metro links, and deep tenant demand.",v:"Two similar towers can perform very differently. The building, the view line and the service charge make the deal.",alt:"Dubai Marina skyline and waterfront towers",img:"assets/images/dubai-marina.webp"},
+ {n:"Business Bay",u:"/areas/business-bay",t:"City Value",b:"Investors and professionals who want Downtown adjacency at a different entry point.",m:"Mixed-use towers: apartments, hotel apartments and offices along the canal.",w:"Canal-side living minutes from Downtown and Sheikh Zayed Road, with strong short-let appeal.",v:"Supply is heavy here, so the gap between average and good buildings is wide. Selection matters more than the postcode.",alt:"Business Bay towers looking towards Burj Khalifa",img:"assets/images/business-bay.webp"},
  {n:"Dubai Islands",t:"Early Entry",b:"Early-cycle investors comfortable with a longer horizon.",m:"New off-plan launches across a beachfront masterplan off Deira.",w:"Waterfront living on the city's northern coast, with regeneration upside as the masterplan builds out.",v:"A patience play. Payment plan, developer track record and handover timeline matter more than the render.",alt:"Dubai Islands beachfront masterplan (render)",img:"assets/images/dubai-islands.webp"},
- {n:"Palm Jumeirah",t:"Finite Supply",b:"Trophy buyers and long-term holders.",m:"Villas on the fronds, apartments and branded residences on the trunk and crescent.",w:"Finite land, beachfront living and resale scarcity that supports pricing.",v:"The Palm is about scarcity. Buy the best line you can afford and think in years, not cycles.",alt:"Aerial view of Palm Jumeirah villas on the fronds",img:"assets/images/palm-jumeirah.webp"},
+ {n:"Palm Jumeirah",u:"/areas/palm-jumeirah",t:"Finite Supply",b:"Trophy buyers and long-term holders.",m:"Villas on the fronds, apartments and branded residences on the trunk and crescent.",w:"Finite land, beachfront living and resale scarcity that supports pricing.",v:"The Palm is about scarcity. Buy the best line you can afford and think in years, not cycles.",alt:"Aerial view of Palm Jumeirah villas on the fronds",img:"assets/images/palm-jumeirah.webp"},
  {n:"Dubailand",t:"Space to Grow",b:"Families and value-focused end-users.",m:"Villas and townhouses in newer gated communities, including The Wilds by Aldar.",w:"More space per dirham than central Dubai, with community infrastructure building out.",v:"Judge each community on delivery. Roads, schools and retail arriving on time change everything here.",alt:"The Wilds by Aldar villa community in Dubailand (render)",img:"assets/images/the-wilds.webp"},
- {n:"Saadiyat, AD",t:"Cultural Prime",b:"End-users and investors who want Abu Dhabi's cultural address.",m:"Luxury villas and apartments in the Saadiyat Cultural District and along the beach.",w:"Louvre Abu Dhabi on the doorstep, with museums and beachfront in one masterplan.",v:"Saadiyat is a different market to Dubai: quieter, supply-controlled and end-user led. Plan accordingly.",alt:"White-sand beachfront on Saadiyat Island",img:"assets/images/saadiyat.webp"}
+ {n:"Saadiyat, AD",u:"/areas/saadiyat-island",t:"Cultural Prime",b:"End-users and investors who want Abu Dhabi's cultural address.",m:"Luxury villas and apartments in the Saadiyat Cultural District and along the beach.",w:"Louvre Abu Dhabi on the doorstep, with museums and beachfront in one masterplan.",v:"Saadiyat is a different market to Dubai: quieter, supply-controlled and end-user led. Plan accordingly.",alt:"White-sand beachfront on Saadiyat Island",img:"assets/images/saadiyat.webp"}
 ];
 
 /* ---- Nav ---- */
@@ -812,6 +813,8 @@ function setComm(i){
   var a=COMMS[i];
   ccTitle.textContent=a.n;ccBest.textContent=a.b;ccMix.textContent=a.m;ccWhy.textContent=a.w;document.getElementById('ccView').textContent=a.v;
   commRight.setAttribute('aria-labelledby','crow-'+i);
+  var gl=document.getElementById('ccGuide');
+  if(gl){if(a.u){gl.href=a.u;gl.style.display='';}else{gl.style.display='none';}}
   placePanel(i,true);
 }
 commList.addEventListener('keydown',function(e){
