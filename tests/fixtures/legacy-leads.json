@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "capturedFrom": "index.html build 2026-07-12-U20",
+  "endpoint": "",
+  "whatsappBase": "https://wa.me/971585802689?text=",
+  "email": "iffy@kamaniliving.com",
+  "emailSubject": "New enquiry from iffykhan.ae",
+  "requiredLegacyFields": ["name", "email", "phone", "purpose"],
+  "purposeOptions": [
+    "Buying a property",
+    "Selling a property",
+    "Property investment",
+    "Relocating",
+    "Not sure / other"
+  ],
+  "budgetOptions": [
+    "Under AED 1M",
+    "AED 1M to 2M",
+    "AED 2M to 5M",
+    "AED 5M to 10M",
+    "AED 10M+"
+  ],
+  "areaOptions": [
+    "Open to advice",
+    "Dubai Hills",
+    "Downtown Dubai",
+    "Dubai Marina",
+    "Business Bay",
+    "Dubai Islands",
+    "Palm Jumeirah",
+    "Dubailand",
+    "Abu Dhabi / Saadiyat"
+  ],
+  "messageTemplate": "New enquiry from iffykhan.ae\nName: {name}\nPhone: {codeAndPhone}\nEmail: {email}\nEnquiry: {purpose}\nBudget: {budgetOrNotSpecified}\nArea: {areaOrOpenToAdvice}\nMessage: {message}",
+  "examples": [
+    {
+      "input": {
+        "name": "Alex Buyer",
+        "code": "+971",
+        "phone": "50 000 0000",
+        "email": "alex@example.com",
+        "purpose": "Buying a property",
+        "budget": "AED 2M to 5M",
+        "area": "Dubai Hills",
+        "message": "Looking for a family home."
+      },
+      "expectedPlain": "New enquiry from iffykhan.ae\nName: Alex Buyer\nPhone: +971 50 000 0000\nEmail: alex@example.com\nEnquiry: Buying a property\nBudget: AED 2M to 5M\nArea: Dubai Hills\nMessage: Looking for a family home."
+    },
+    {
+      "input": {
+        "name": "Sam Seller",
+        "code": "+44",
+        "phone": "7700 900123",
+        "email": "sam@example.com",
+        "purpose": "Selling a property",
+        "budget": "",
+        "area": "",
+        "message": "Please advise on pricing."
+      },
+      "expectedPlain": "New enquiry from iffykhan.ae\nName: Sam Seller\nPhone: +44 7700 900123\nEmail: sam@example.com\nEnquiry: Selling a property\nBudget: Not specified\nArea: Open to advice\nMessage: Please advise on pricing."
+    },
+    {
+      "input": {
+        "name": "Morgan Investor",
+        "code": "other",
+        "phone": "+1 202 555 0110",
+        "email": "morgan@example.com",
+        "purpose": "Property investment",
+        "budget": "AED 5M to 10M",
+        "area": "Dubai Islands",
+        "message": "Comparing off-plan routes."
+      },
+      "expectedPlain": "New enquiry from iffykhan.ae\nName: Morgan Investor\nPhone: +1 202 555 0110\nEmail: morgan@example.com\nEnquiry: Property investment\nBudget: AED 5M to 10M\nArea: Dubai Islands\nMessage: Comparing off-plan routes."
+    }
+  ],
+  "legacyUnsupportedSuccessCopy": "Thank you. Iffy will contact you shortly.",
+  "approvedMigrationRule": "Opening WhatsApp or email is a draft handoff only. The migrated site must keep the draft and direct contact details visible and must not claim sent, booked, or confirmed status."
+}

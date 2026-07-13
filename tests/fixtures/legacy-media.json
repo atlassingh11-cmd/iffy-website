@@ -1,0 +1,519 @@
+{
+  "version": 1,
+  "capturedFrom": "Legacy HTML, CSS, and inline JavaScript before route migration",
+  "totalStoredBytes": 25571504,
+  "stored": [
+    {
+      "path": "assets/images/apple-touch-icon.png",
+      "bytes": 2525,
+      "referencedBy": [
+        "index.html",
+        "about.html",
+        "privacy.html",
+        "404.html",
+        "areas/business-bay.html",
+        "areas/downtown-dubai.html",
+        "areas/dubai-hills.html",
+        "areas/dubai-islands.html",
+        "areas/dubai-marina.html",
+        "areas/dubailand.html",
+        "areas/index.html",
+        "areas/palm-jumeirah.html",
+        "areas/saadiyat-island.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/business-bay.jpg",
+      "bytes": 271337,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/business-bay.webp",
+      "bytes": 173308,
+      "referencedBy": [
+        "index.html",
+        "areas/business-bay.html",
+        "areas/index.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/downtown.jpg",
+      "bytes": 118333,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/downtown.webp",
+      "bytes": 87104,
+      "referencedBy": [
+        "index.html",
+        "areas/downtown-dubai.html",
+        "areas/index.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/dubai-hills.jpg",
+      "bytes": 241284,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/dubai-hills.webp",
+      "bytes": 205506,
+      "referencedBy": [
+        "index.html",
+        "areas/dubai-hills.html",
+        "areas/index.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/dubai-islands.jpg",
+      "bytes": 57404,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/dubai-islands.webp",
+      "bytes": 47226,
+      "referencedBy": [
+        "index.html",
+        "areas/dubai-islands.html",
+        "areas/index.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/dubai-marina.jpg",
+      "bytes": 287071,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/dubai-marina.webp",
+      "bytes": 233624,
+      "referencedBy": [
+        "index.html",
+        "areas/dubai-marina.html",
+        "areas/index.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/fallback-iffy.jpg",
+      "bytes": 34149,
+      "referencedBy": [
+        "index.html",
+        "about.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/favicon-192.png",
+      "bytes": 3022,
+      "referencedBy": [
+        "index.html",
+        "about.html",
+        "privacy.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/favicon-32.png",
+      "bytes": 538,
+      "referencedBy": [
+        "index.html",
+        "about.html",
+        "privacy.html",
+        "404.html",
+        "areas/business-bay.html",
+        "areas/downtown-dubai.html",
+        "areas/dubai-hills.html",
+        "areas/dubai-islands.html",
+        "areas/dubai-marina.html",
+        "areas/dubailand.html",
+        "areas/index.html",
+        "areas/palm-jumeirah.html",
+        "areas/saadiyat-island.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/favicon.svg",
+      "bytes": 252,
+      "referencedBy": [
+        "index.html",
+        "about.html",
+        "privacy.html",
+        "404.html",
+        "areas/business-bay.html",
+        "areas/downtown-dubai.html",
+        "areas/dubai-hills.html",
+        "areas/dubai-islands.html",
+        "areas/dubai-marina.html",
+        "areas/dubailand.html",
+        "areas/index.html",
+        "areas/palm-jumeirah.html",
+        "areas/saadiyat-island.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/hero-downtown.jpg",
+      "bytes": 539941,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/hero-downtown.webp",
+      "bytes": 320962,
+      "referencedBy": [
+        "index.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/hero-interior.jpg",
+      "bytes": 267734,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/hero-interior.webp",
+      "bytes": 163088,
+      "referencedBy": [
+        "index.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/hero-marina.jpg",
+      "bytes": 418921,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/hero-marina.webp",
+      "bytes": 282742,
+      "referencedBy": [
+        "index.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/hero-palm.jpg",
+      "bytes": 664723,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/hero-palm.webp",
+      "bytes": 372550,
+      "referencedBy": [
+        "index.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/iffy-event.jpg",
+      "bytes": 50151,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/iffy-event.webp",
+      "bytes": 32172,
+      "referencedBy": [
+        "index.html",
+        "about.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/iffy-film-poster.webp",
+      "bytes": 29224,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/iffy-laptop.jpg",
+      "bytes": 124704,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/iffy-laptop.webp",
+      "bytes": 78128,
+      "referencedBy": [
+        "about.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/iffykhan-og.jpg",
+      "bytes": 64030,
+      "referencedBy": [
+        "index.html",
+        "about.html",
+        "privacy.html",
+        "404.html",
+        "areas/index.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/kamani-guest-1.jpg",
+      "bytes": 127951,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/kamani-guest-1.webp",
+      "bytes": 92884,
+      "referencedBy": [
+        "about.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/kamani-guest-2.jpg",
+      "bytes": 86116,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/kamani-guest-2.webp",
+      "bytes": 54896,
+      "referencedBy": [
+        "about.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/kamani-guest-3.jpg",
+      "bytes": 94588,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/kamani-guest-3.webp",
+      "bytes": 59580,
+      "referencedBy": [
+        "index.html",
+        "about.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/og-areas/business-bay.jpg",
+      "bytes": 173677,
+      "referencedBy": [
+        "areas/business-bay.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/og-areas/downtown-dubai.jpg",
+      "bytes": 138147,
+      "referencedBy": [
+        "areas/downtown-dubai.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/og-areas/dubai-hills.jpg",
+      "bytes": 217500,
+      "referencedBy": [
+        "areas/dubai-hills.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/og-areas/dubai-islands.jpg",
+      "bytes": 167967,
+      "referencedBy": [
+        "areas/dubai-islands.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/og-areas/dubai-marina.jpg",
+      "bytes": 217340,
+      "referencedBy": [
+        "areas/dubai-marina.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/og-areas/dubailand.jpg",
+      "bytes": 275719,
+      "referencedBy": [
+        "areas/dubailand.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/og-areas/palm-jumeirah.jpg",
+      "bytes": 153421,
+      "referencedBy": [
+        "areas/palm-jumeirah.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/og-areas/saadiyat-island.jpg",
+      "bytes": 206107,
+      "referencedBy": [
+        "areas/saadiyat-island.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/og-image.jpg",
+      "bytes": 118333,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/palm-before.jpg",
+      "bytes": 197734,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/palm-before.webp",
+      "bytes": 46996,
+      "referencedBy": [
+        "index.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/palm-complete.jpg",
+      "bytes": 301040,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/palm-complete.webp",
+      "bytes": 188482,
+      "referencedBy": [
+        "index.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/palm-jumeirah.jpg",
+      "bytes": 126786,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/palm-jumeirah.webp",
+      "bytes": 101720,
+      "referencedBy": [
+        "index.html",
+        "areas/index.html",
+        "areas/palm-jumeirah.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/palm-lifestyle.jpg",
+      "bytes": 450037,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/palm-lifestyle.webp",
+      "bytes": 266376,
+      "referencedBy": [
+        "index.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/saadiyat.jpg",
+      "bytes": 338714,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/saadiyat.webp",
+      "bytes": 260858,
+      "referencedBy": [
+        "index.html",
+        "areas/index.html",
+        "areas/saadiyat-island.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/the-edit.jpg",
+      "bytes": 252847,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/the-edit.webp",
+      "bytes": 115772,
+      "referencedBy": [
+        "index.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/images/the-wilds.jpg",
+      "bytes": 310142,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/images/the-wilds.webp",
+      "bytes": 248396,
+      "referencedBy": [
+        "index.html",
+        "areas/dubailand.html",
+        "areas/index.html"
+      ],
+      "legacyStatus": "referenced"
+    },
+    {
+      "path": "assets/videos/iffy-film.mp4",
+      "bytes": 14205227,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/videos/iffy-film.vtt",
+      "bytes": 1587,
+      "referencedBy": [],
+      "legacyStatus": "unused"
+    },
+    {
+      "path": "assets/videos/iffy-hero.mp4",
+      "bytes": 802811,
+      "referencedBy": [
+        "index.html"
+      ],
+      "legacyStatus": "referenced"
+    }
+  ],
+  "migrationAdditions": [
+    "assets/images/iffy-film-poster.webp",
+    "assets/videos/iffy-film.vtt"
+  ],
+  "duplicatePolicy": "Prefer a referenced WebP for rendered pages and retain dedicated JPG files only for metadata. Stored but unused counterparts are not copied into public/media.",
+  "advisorFilmPolicy": {
+    "source": "assets/videos/iffy-film.mp4",
+    "legacyStatus": "unused",
+    "migratedStatus": "one explicit-play placement",
+    "preload": "none",
+    "poster": "assets/images/iffy-film-poster.webp",
+    "captions": "assets/videos/iffy-film.vtt"
+  }
+}

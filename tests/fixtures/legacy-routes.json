@@ -1,0 +1,544 @@
+{
+  "version": 1,
+  "capturedFrom": "2026-07-12 legacy static HTML",
+  "baseUrl": "https://iffykhan.ae",
+  "routes": [
+    {
+      "path": "/",
+      "source": "index.html",
+      "expectedStatus": 200,
+      "pathVariants": [
+        "/",
+        "/index.html"
+      ],
+      "title": "Iffy Khan | Dubai & Abu Dhabi Property Advisory",
+      "description": "Buy, sell and invest in Dubai and Abu Dhabi property with Iffy Khan. Advisory-led guidance across off-plan, ready homes, resale and investment opportunities.",
+      "canonical": "https://iffykhan.ae/",
+      "robots": "index,follow",
+      "ogTitle": "Iffy Khan | Dubai & Abu Dhabi Property Advisory",
+      "ogDescription": "Advisory-led guidance across off-plan, ready homes, resale and investment opportunities in Dubai and Abu Dhabi.",
+      "ogImage": "https://iffykhan.ae/assets/images/iffykhan-og.jpg",
+      "primaryHeading": "Make your next Dubai or Abu&nbsp;Dhabi property move with more certainty.",
+      "headingCount": 1,
+      "anchors": [
+        "mobileAnimInline",
+        "nav",
+        "burger",
+        "mMenu",
+        "top",
+        "morph",
+        "morphStage",
+        "heroVideo",
+        "mHero",
+        "mcap1",
+        "mcap2",
+        "mcap3",
+        "seg0",
+        "seg1",
+        "seg2",
+        "seg3",
+        "services",
+        "meet",
+        "vision",
+        "visScroll",
+        "communities",
+        "commList",
+        "commPanel",
+        "commVisual",
+        "ccTitle",
+        "ccViewLabel",
+        "ccView",
+        "ccGuide",
+        "ccBest",
+        "ccMix",
+        "ccWhy",
+        "developments",
+        "tools",
+        "tArea",
+        "areaGo",
+        "areaErr",
+        "areaResult",
+        "tBudget",
+        "bcPrice",
+        "bcType",
+        "bcFundWrap",
+        "bcFund",
+        "bcPurpWrap",
+        "bcPurp",
+        "bcPlanWrap",
+        "bcPlan",
+        "bcGo",
+        "bcErr",
+        "bcResult",
+        "tOffplan",
+        "opGo",
+        "opErr",
+        "opResult",
+        "selling",
+        "journey",
+        "why",
+        "testimonials",
+        "tslPrev",
+        "tslNext",
+        "tslRail",
+        "mq",
+        "contact",
+        "leadForm",
+        "fName",
+        "fEmail",
+        "fCode",
+        "fPhone",
+        "fPurpose",
+        "fBudget",
+        "fArea",
+        "fMsg",
+        "formStatus",
+        "waFallback",
+        "mailFallback",
+        "floatWa"
+      ],
+      "schemaTypes": [
+        "RealEstateAgent"
+      ],
+      "contactHrefs": [
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27m%20looking%20to%20buy%20in%20Dubai%20or%20Abu%20Dhabi.%20Can%20we%20talk%3F",
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27m%20thinking%20about%20selling%20my%20property%20in%20Dubai%20or%20Abu%20Dhabi.%20Can%20we%20talk%3F",
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27d%20like%20to%20discuss%20investing%20in%20Dubai%20or%20Abu%20Dhabi%20property.",
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27d%20like%20to%20talk%20through%20an%20off-plan%20opportunity%20and%20understand%20if%20it%20fits%20my%20plan.",
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27d%20like%20to%20ask%20about%20The%20Wilds%20by%20Aldar.",
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27d%20like%20to%20ask%20about%20The%20Edit%20by%20Meraas.",
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27d%20like%20to%20ask%20about%20Meriva%20by%20Ellington%20at%20Dubai%20Islands.",
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27d%20like%20to%20ask%20about%20Palm%20Jumeirah.",
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27d%20like%20to%20ask%20about%20Saadiyat%20Island%20in%20Abu%20Dhabi.",
+        "tel:+971585802689",
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I",
+        "mailto:iffy@kamaniliving.com",
+        "https://maps.app.goo.gl/C8X2wJoAyDFFxAFm6",
+        "https://instagram.com/iffy_realestate",
+        "mailto:iffy@kamaniliving.com?subject="
+      ],
+      "unsupportedBookingLanguage": true
+    },
+    {
+      "path": "/about",
+      "source": "about.html",
+      "expectedStatus": 200,
+      "pathVariants": [
+        "/about",
+        "/about/",
+        "/about.html"
+      ],
+      "title": "About Iffy Khan | Dubai & Abu Dhabi Property Specialist",
+      "description": "Learn about Iffy Khan, a Dubai and Abu Dhabi property advisor helping buyers, sellers and investors compare off-plan, ready homes, resale and investment opportunities with clarity.",
+      "canonical": "https://iffykhan.ae/about",
+      "robots": "index,follow",
+      "ogTitle": "About Iffy Khan | Dubai & Abu Dhabi Property Specialist",
+      "ogDescription": "Advisory-led Dubai and Abu Dhabi property guidance across off-plan, ready homes and the secondary market.",
+      "ogImage": "https://iffykhan.ae/assets/images/iffykhan-og.jpg",
+      "primaryHeading": "About Iffy Khan",
+      "headingCount": 1,
+      "anchors": [
+        "nav",
+        "burger",
+        "mMenu",
+        "top",
+        "floatWa"
+      ],
+      "schemaTypes": [
+        "Person"
+      ],
+      "contactHrefs": [
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27d%20like%20to%20talk%20about%20Dubai%20or%20Abu%20Dhabi%20property.",
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I"
+      ],
+      "unsupportedBookingLanguage": true
+    },
+    {
+      "path": "/privacy",
+      "source": "privacy.html",
+      "expectedStatus": 200,
+      "pathVariants": [
+        "/privacy",
+        "/privacy/",
+        "/privacy.html"
+      ],
+      "title": "Privacy | Iffy Khan",
+      "description": "How enquiries made through iffykhan.ae are handled.",
+      "canonical": "https://iffykhan.ae/privacy",
+      "robots": "noindex",
+      "ogTitle": "Privacy | Iffy Khan",
+      "ogDescription": "How enquiries made through iffykhan.ae are handled.",
+      "ogImage": "https://iffykhan.ae/assets/images/iffykhan-og.jpg",
+      "primaryHeading": "How your details are handled.",
+      "headingCount": 1,
+      "anchors": [
+        "nav",
+        "burger",
+        "mMenu",
+        "top"
+      ],
+      "schemaTypes": [],
+      "contactHrefs": [
+        "mailto:iffy@kamaniliving.com"
+      ],
+      "unsupportedBookingLanguage": true
+    },
+    {
+      "path": "/areas",
+      "source": "areas/index.html",
+      "expectedStatus": 200,
+      "pathVariants": [
+        "/areas",
+        "/areas/",
+        "/areas.html"
+      ],
+      "title": "Dubai & Abu Dhabi Area Guides | Property | Iffy Khan",
+      "description": "Premium buyer guides to Dubai and Abu Dhabi's key communities — Palm Jumeirah, Dubai Hills, Marina, Downtown, Business Bay, Dubailand, Dubai Islands and Saadiyat Island — with prices, yields and honest advice.",
+      "canonical": "https://iffykhan.ae/areas",
+      "robots": "index,follow",
+      "ogTitle": "Dubai & Abu Dhabi Area Guides — Iffy Khan",
+      "ogDescription": "Eight premium buyer guides: prices, yields, schools, lifestyle and honest considerations for Dubai and Abu Dhabi's key communities.",
+      "ogImage": "https://iffykhan.ae/assets/images/iffykhan-og.jpg",
+      "primaryHeading": "Dubai & Abu Dhabi area guides",
+      "headingCount": 1,
+      "anchors": [
+        "nav",
+        "burger",
+        "mMenu",
+        "top"
+      ],
+      "schemaTypes": [
+        "RealEstateAgent",
+        "BreadcrumbList"
+      ],
+      "contactHrefs": [
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27d%20like%20help%20choosing%20the%20right%20area%20in%20Dubai%20or%20Abu%20Dhabi."
+      ],
+      "unsupportedBookingLanguage": true
+    },
+    {
+      "path": "/areas/business-bay",
+      "source": "areas/business-bay.html",
+      "expectedStatus": 200,
+      "pathVariants": [
+        "/areas/business-bay",
+        "/areas/business-bay/",
+        "/areas/business-bay.html"
+      ],
+      "title": "Business Bay Property Guide | Prices & Yields | Iffy Khan",
+      "description": "Business Bay buyer's guide: apartment prices, rental yields, canal-front towers, supply pipeline risks and honest advice from property advisor Iffy Khan.",
+      "canonical": "https://iffykhan.ae/areas/business-bay",
+      "robots": "index,follow",
+      "ogTitle": "Business Bay Property Guide — Prices, Yields & Tower Selection",
+      "ogDescription": "Downtown's value-side neighbour: real prices, why yields beat the postcode next door, and how to avoid the weak towers in Dubai's most uneven district.",
+      "ogImage": "https://iffykhan.ae/assets/images/og-areas/business-bay.jpg",
+      "primaryHeading": "Business Bay Property Guide",
+      "headingCount": 1,
+      "anchors": [
+        "nav",
+        "burger",
+        "mMenu",
+        "top",
+        "floatWa"
+      ],
+      "schemaTypes": [
+        "RealEstateAgent",
+        "BreadcrumbList",
+        "Place",
+        "FAQPage"
+      ],
+      "contactHrefs": [
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27m%20researching%20Business%20Bay%20and%20would%20like%20your%20view%20on%20it."
+      ],
+      "unsupportedBookingLanguage": true
+    },
+    {
+      "path": "/areas/downtown-dubai",
+      "source": "areas/downtown-dubai.html",
+      "expectedStatus": 200,
+      "pathVariants": [
+        "/areas/downtown-dubai",
+        "/areas/downtown-dubai/",
+        "/areas/downtown-dubai.html"
+      ],
+      "title": "Downtown Dubai Property Guide | Prices | Iffy Khan",
+      "description": "Downtown Dubai buyer's guide: apartment prices around Burj Khalifa, rental yields, branded residences, service charges and honest advice from Iffy Khan.",
+      "canonical": "https://iffykhan.ae/areas/downtown-dubai",
+      "robots": "index,follow",
+      "ogTitle": "Downtown Dubai Property Guide — Prices, Yields & Advice",
+      "ogDescription": "The Burj Khalifa district decoded: realistic prices, what branded residences add, why service charges decide returns here, and who Downtown actually suits.",
+      "ogImage": "https://iffykhan.ae/assets/images/og-areas/downtown-dubai.jpg",
+      "primaryHeading": "Downtown Dubai Property Guide",
+      "headingCount": 1,
+      "anchors": [
+        "nav",
+        "burger",
+        "mMenu",
+        "top",
+        "floatWa"
+      ],
+      "schemaTypes": [
+        "RealEstateAgent",
+        "BreadcrumbList",
+        "Place",
+        "FAQPage"
+      ],
+      "contactHrefs": [
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27m%20researching%20Downtown%20Dubai%20and%20would%20like%20your%20view%20on%20it."
+      ],
+      "unsupportedBookingLanguage": true
+    },
+    {
+      "path": "/areas/dubai-hills",
+      "source": "areas/dubai-hills.html",
+      "expectedStatus": 200,
+      "pathVariants": [
+        "/areas/dubai-hills",
+        "/areas/dubai-hills/",
+        "/areas/dubai-hills.html"
+      ],
+      "title": "Dubai Hills Estate Property Guide | Prices | Iffy Khan",
+      "description": "Dubai Hills Estate buyer's guide: villa, townhouse and apartment prices, rental yields, schools, the golf course lifestyle and honest advice from Iffy Khan.",
+      "canonical": "https://iffykhan.ae/areas/dubai-hills",
+      "robots": "index,follow",
+      "ogTitle": "Dubai Hills Estate Property Guide — Prices, Schools & Advice",
+      "ogDescription": "Dubai's flagship family master community: what villas, townhouses and apartments really cost, which schools are inside the gates, and what to watch before buying.",
+      "ogImage": "https://iffykhan.ae/assets/images/og-areas/dubai-hills.jpg",
+      "primaryHeading": "Dubai Hills Estate Property Guide",
+      "headingCount": 1,
+      "anchors": [
+        "nav",
+        "burger",
+        "mMenu",
+        "top",
+        "floatWa"
+      ],
+      "schemaTypes": [
+        "RealEstateAgent",
+        "BreadcrumbList",
+        "Place",
+        "FAQPage"
+      ],
+      "contactHrefs": [
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27m%20researching%20Dubai%20Hills%20Estate%20and%20would%20like%20your%20view%20on%20it."
+      ],
+      "unsupportedBookingLanguage": true
+    },
+    {
+      "path": "/areas/dubai-islands",
+      "source": "areas/dubai-islands.html",
+      "expectedStatus": 200,
+      "pathVariants": [
+        "/areas/dubai-islands",
+        "/areas/dubai-islands/",
+        "/areas/dubai-islands.html"
+      ],
+      "title": "Dubai Islands Property Guide | Off-Plan & Beachfront | Iffy Khan",
+      "description": "Dubai Islands buyer's guide: off-plan apartment prices, Nakheel's five-island masterplan, beachfront launches, honest risks and advice from Iffy Khan.",
+      "canonical": "https://iffykhan.ae/areas/dubai-islands",
+      "robots": "index,follow",
+      "ogTitle": "Dubai Islands Property Guide — The Early-Entry Beachfront Play",
+      "ogDescription": "Nakheel's five-island masterplan decoded: real launch pricing, what exists today versus the render, who the early-cycle entry suits — and the honest risks.",
+      "ogImage": "https://iffykhan.ae/assets/images/og-areas/dubai-islands.jpg",
+      "primaryHeading": "Dubai Islands Property Guide",
+      "headingCount": 1,
+      "anchors": [
+        "nav",
+        "burger",
+        "mMenu",
+        "top",
+        "floatWa"
+      ],
+      "schemaTypes": [
+        "RealEstateAgent",
+        "BreadcrumbList",
+        "Place",
+        "FAQPage"
+      ],
+      "contactHrefs": [
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27m%20researching%20Dubai%20Islands%20and%20would%20like%20your%20view%20on%20it."
+      ],
+      "unsupportedBookingLanguage": true
+    },
+    {
+      "path": "/areas/dubai-marina",
+      "source": "areas/dubai-marina.html",
+      "expectedStatus": 200,
+      "pathVariants": [
+        "/areas/dubai-marina",
+        "/areas/dubai-marina/",
+        "/areas/dubai-marina.html"
+      ],
+      "title": "Dubai Marina Property Guide | Prices & Yields | Iffy Khan",
+      "description": "Dubai Marina buyer's guide: apartment prices tower by tower, rental yields, short-let performance, lifestyle and honest advice from advisor Iffy Khan.",
+      "canonical": "https://iffykhan.ae/areas/dubai-marina",
+      "robots": "index,follow",
+      "ogTitle": "Dubai Marina Property Guide — Prices, Yields & Building Advice",
+      "ogDescription": "Dubai's most established waterfront: what apartments really cost, which towers out-perform, short-let economics and the traps in a 200-tower market.",
+      "ogImage": "https://iffykhan.ae/assets/images/og-areas/dubai-marina.jpg",
+      "primaryHeading": "Dubai Marina Property Guide",
+      "headingCount": 1,
+      "anchors": [
+        "nav",
+        "burger",
+        "mMenu",
+        "top",
+        "floatWa"
+      ],
+      "schemaTypes": [
+        "RealEstateAgent",
+        "BreadcrumbList",
+        "Place",
+        "FAQPage"
+      ],
+      "contactHrefs": [
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27m%20researching%20Dubai%20Marina%20and%20would%20like%20your%20view%20on%20it."
+      ],
+      "unsupportedBookingLanguage": true
+    },
+    {
+      "path": "/areas/dubailand",
+      "source": "areas/dubailand.html",
+      "expectedStatus": 200,
+      "pathVariants": [
+        "/areas/dubailand",
+        "/areas/dubailand/",
+        "/areas/dubailand.html"
+      ],
+      "title": "Dubailand Property Guide | Villas & Townhouses | Iffy Khan",
+      "description": "Dubailand buyer's guide: villa and townhouse prices, The Wilds and Aldar's new communities, rental yields, schools, honest risks and advice from Iffy Khan.",
+      "canonical": "https://iffykhan.ae/areas/dubailand",
+      "robots": "index,follow",
+      "ogTitle": "Dubailand Property Guide — Space, Value & New Communities",
+      "ogDescription": "Dubai's family value belt decoded: real villa and townhouse prices, the new Aldar wave, which communities deliver — and the honest trade-offs of buying inland.",
+      "ogImage": "https://iffykhan.ae/assets/images/og-areas/dubailand.jpg",
+      "primaryHeading": "Dubailand Property Guide",
+      "headingCount": 1,
+      "anchors": [
+        "nav",
+        "burger",
+        "mMenu",
+        "top",
+        "floatWa"
+      ],
+      "schemaTypes": [
+        "RealEstateAgent",
+        "BreadcrumbList",
+        "Place",
+        "FAQPage"
+      ],
+      "contactHrefs": [
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27m%20researching%20Dubailand%20and%20would%20like%20your%20view%20on%20it."
+      ],
+      "unsupportedBookingLanguage": true
+    },
+    {
+      "path": "/areas/palm-jumeirah",
+      "source": "areas/palm-jumeirah.html",
+      "expectedStatus": 200,
+      "pathVariants": [
+        "/areas/palm-jumeirah",
+        "/areas/palm-jumeirah/",
+        "/areas/palm-jumeirah.html"
+      ],
+      "title": "Palm Jumeirah Property Guide | Prices & Advice | Iffy Khan",
+      "description": "Palm Jumeirah buyer's guide: apartment and villa prices, rental yields, service charges, schools, lifestyle and honest advice from advisor Iffy Khan.",
+      "canonical": "https://iffykhan.ae/areas/palm-jumeirah",
+      "robots": "index,follow",
+      "ogTitle": "Palm Jumeirah Property Guide — Prices, Yields & Honest Advice",
+      "ogDescription": "What it really costs to buy on the Palm: apartments, Garden Homes and Signature Villas, yields, service charges and the trade-offs nobody mentions.",
+      "ogImage": "https://iffykhan.ae/assets/images/og-areas/palm-jumeirah.jpg",
+      "primaryHeading": "Palm Jumeirah Property Guide",
+      "headingCount": 1,
+      "anchors": [
+        "nav",
+        "burger",
+        "mMenu",
+        "top",
+        "floatWa"
+      ],
+      "schemaTypes": [
+        "RealEstateAgent",
+        "BreadcrumbList",
+        "Place",
+        "FAQPage"
+      ],
+      "contactHrefs": [
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27m%20researching%20Palm%20Jumeirah%20and%20would%20like%20your%20view%20on%20it."
+      ],
+      "unsupportedBookingLanguage": true
+    },
+    {
+      "path": "/areas/saadiyat-island",
+      "source": "areas/saadiyat-island.html",
+      "expectedStatus": 200,
+      "pathVariants": [
+        "/areas/saadiyat-island",
+        "/areas/saadiyat-island/",
+        "/areas/saadiyat-island.html"
+      ],
+      "title": "Saadiyat Island Property Guide | Abu Dhabi | Iffy Khan",
+      "description": "Saadiyat Island buyer's guide: villa and apartment prices, the Louvre and Guggenheim district, rental yields, schools and honest advice from Iffy Khan.",
+      "canonical": "https://iffykhan.ae/areas/saadiyat-island",
+      "robots": "index,follow",
+      "ogTitle": "Saadiyat Island Property Guide — Abu Dhabi's Cultural Address",
+      "ogDescription": "The Louvre's island decoded: real villa and apartment prices, why supply is deliberately scarce, who Saadiyat suits, and how it differs from buying in Dubai.",
+      "ogImage": "https://iffykhan.ae/assets/images/og-areas/saadiyat-island.jpg",
+      "primaryHeading": "Saadiyat Island Property Guide",
+      "headingCount": 1,
+      "anchors": [
+        "nav",
+        "burger",
+        "mMenu",
+        "top",
+        "floatWa"
+      ],
+      "schemaTypes": [
+        "RealEstateAgent",
+        "BreadcrumbList",
+        "Place",
+        "FAQPage"
+      ],
+      "contactHrefs": [
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27m%20researching%20Saadiyat%20Island%20in%20Abu%20Dhabi%20and%20would%20like%20your%20view%20on%20it."
+      ],
+      "unsupportedBookingLanguage": true
+    },
+    {
+      "path": "/404",
+      "source": "404.html",
+      "expectedStatus": 404,
+      "pathVariants": [
+        "/404",
+        "/404/",
+        "/404.html"
+      ],
+      "title": "Page Not Found | Iffy Khan",
+      "description": "",
+      "canonical": "",
+      "robots": "noindex",
+      "ogTitle": "Iffy Khan | Dubai & Abu Dhabi Property Advisory",
+      "ogDescription": "",
+      "ogImage": "https://iffykhan.ae/assets/images/iffykhan-og.jpg",
+      "primaryHeading": "This page doesn't exist.",
+      "headingCount": 1,
+      "anchors": [
+        "nav",
+        "top"
+      ],
+      "schemaTypes": [],
+      "contactHrefs": [
+        "https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27d%20like%20to%20talk%20about%20Dubai%20property."
+      ],
+      "unsupportedBookingLanguage": true
+    }
+  ],
+  "robots": "User-agent: *\nAllow: /\n\nSitemap: https://iffykhan.ae/sitemap.xml\n",
+  "sitemap": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://iffykhan.ae/</loc>\n    <lastmod>2026-07-12</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>1.0</priority>\n  </url>\n  <url>\n    <loc>https://iffykhan.ae/about</loc>\n    <lastmod>2026-07-11</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://iffykhan.ae/areas</loc>\n    <lastmod>2026-07-12</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://iffykhan.ae/areas/palm-jumeirah</loc>\n    <lastmod>2026-07-11</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n  <url>\n    <loc>https://iffykhan.ae/areas/dubai-hills</loc>\n    <lastmod>2026-07-11</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n  <url>\n    <loc>https://iffykhan.ae/areas/dubai-marina</loc>\n    <lastmod>2026-07-11</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n  <url>\n    <loc>https://iffykhan.ae/areas/downtown-dubai</loc>\n    <lastmod>2026-07-11</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n  <url>\n    <loc>https://iffykhan.ae/areas/business-bay</loc>\n    <lastmod>2026-07-11</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n  <url>\n    <loc>https://iffykhan.ae/areas/saadiyat-island</loc>\n    <lastmod>2026-07-11</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n  <url>\n    <loc>https://iffykhan.ae/areas/dubailand</loc>\n    <lastmod>2026-07-12</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n  <url>\n    <loc>https://iffykhan.ae/areas/dubai-islands</loc>\n    <lastmod>2026-07-12</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n</urlset>\n",
+  "deployment": {
+    "workerName": "new-sitetest",
+    "missingRouteStatus": 404,
+    "missingRouteDocument": "/404.html",
+    "htmlHandling": "auto-trailing-slash"
+  }
+}

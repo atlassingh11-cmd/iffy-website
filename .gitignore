@@ -1,0 +1,18 @@
+.DS_Store
+
+# Dependencies and local environment
+node_modules/
+.env*
+!.env.example
+
+# Next.js and Cloudflare build output
+.next/
+out/
+.wrangler/
+next-env.d.ts
+*.tsbuildinfo
+
+# Local test and review artifacts
+.playwright-cli/
+test-results/
+output/

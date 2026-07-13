@@ -1,55 +1,62 @@
-# Deploying iffykhan.ae (Worker: new-sitetest)
+# Deploying iffykhan.ae
 
-One-time Wrangler deploy to enable the branded 404 page
-(`not_found_handling = "404-page"` cannot be set via dashboard drag-and-drop).
+The site is a static Next.js export published by the existing Cloudflare Worker
+`new-sitetest`. Wrangler is restricted to the generated `out/` directory, so a
+deploy is a full replacement of the Worker assets rather than an upload of the
+repository root.
 
 ## Prerequisites
-- Node.js 18+ (`node --version` — if missing, install the LTS from https://nodejs.org)
-- Access to the Cloudflare account that owns the `new-sitetest` Worker
 
-## Run these from THE SITE FOLDER
-(the folder containing index.html and wrangler.jsonc — either
-`~/Claude/code/deploy 20` on Rayy's Mac, or the extracted
-`iffykhan-build-2026-07-09-U6.zip`)
+- Node.js 20 or newer
+- Access to the Cloudflare account that owns `new-sitetest`
+- An authenticated Wrangler session (`npx wrangler login` when needed)
+
+## Build and verify
+
+Run from the repository root:
 
 ```bash
-cd "/Users/rayy/Claude/code/deploy 20"     # or the extracted zip folder
+npm ci
+npm run lint
+npm run typecheck
+npm test
+npm run build
+npm run check:js-budget
+npm run test:e2e
+```
 
-# 1. Confirm wrangler runs (downloads on first use)
-npx wrangler --version
+`npm run build` creates `out/`, including the generated routes, branded 404,
+robots and sitemap files, security/cache headers, redirects, and approved local
+media. `npm run test:e2e` serves that exact directory through Wrangler.
 
-# 2. Log in — opens a browser; approve with the Cloudflare account
-#    that owns new-sitetest (skip if already logged in)
-npx wrangler login
+## Deploy
 
-# 3. Deploy — uploads the site assets AND applies 404-page handling.
-#    Assets deploys are full replacements, so this also purges old
-#    orphaned files (iffy-film.mp4, superseded .jpg files).
+```bash
 npx wrangler deploy
 ```
 
-Expected output ends with something like:
-`Deployed new-sitetest ... https://new-sitetest.atlassingh11.workers.dev`
+The Worker name and domain binding are already defined outside the static asset
+bundle. Do not change those bindings during a routine site deployment.
 
-## What this does and does not touch
-- DOES: publish the current folder as the Worker's static assets,
-  apply `not_found_handling = "404-page"`.
-- DOES NOT: change domain bindings (iffykhan.ae stays attached to the
-  Worker by name), design, copy, or any dashboard settings.
+## Verify production
 
-## Verify after deploy
 ```bash
-# must be HTTP/2 404 …
+curl -sI https://iffykhan.ae/ | head -1
+curl -sI https://iffykhan.ae/about | head -1
+curl -sI https://iffykhan.ae/areas | head -1
 curl -sI https://iffykhan.ae/random-test-page | head -1
-# … must print the branded page title
-curl -s  https://iffykhan.ae/random-test-page | grep -o "<title>[^<]*</title>"
-# … must include noindex
-curl -s  https://iffykhan.ae/random-test-page | grep -o 'name="robots" content="noindex"'
-# main pages still on build U6
-curl -sL https://iffykhan.ae/        | grep -o 'name="build" content="[^"]*"'
-curl -sL https://iffykhan.ae/about   | grep -o 'name="build" content="[^"]*"'
-curl -sL https://iffykhan.ae/privacy | grep -o 'name="build" content="[^"]*"'
+curl -s https://iffykhan.ae/random-test-page | grep -o '<title>[^<]*</title>'
+curl -s https://iffykhan.ae/random-test-page | grep -o 'name="robots" content="[^"]*"'
+curl -sI https://iffykhan.ae/assets/images/iffykhan-og.jpg | grep -i '^location:'
 ```
 
-Expected: `404`, `<title>Page Not Found | Iffy Khan</title>`,
-the noindex meta, and `2026-07-09-U6` on all three pages.
+Expected results:
+
+- Main routes return `200`.
+- The unknown route returns `404`, uses the branded page, and includes
+  `noindex`.
+- The legacy social-image URL redirects to `/media/iffykhan-og.jpg`.
+
+Wrangler asset deployments are full replacements. That property removes
+orphaned files from previous static builds, while the current advisor film is
+retained because it is now an explicitly activated part of the landing page.

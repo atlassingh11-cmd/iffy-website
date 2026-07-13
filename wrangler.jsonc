@@ -1,13 +1,11 @@
-// Cloudflare Worker config for iffykhan.ae (Worker name: new-sitetest)
-// Deploy from this folder with:  npx wrangler deploy
-// The custom domain (iffykhan.ae) stays attached — it is bound to the Worker
-// name in the dashboard, not to this file.
+// Cloudflare Worker config for iffykhan.ae (Worker name: new-sitetest).
+// `npm run build` creates the only directory Wrangler is allowed to publish.
 {
   "name": "new-sitetest",
   "compatibility_date": "2026-07-09",
   "assets": {
-    "directory": ".",
-    // Serve /404.html (branded, noindex) with a real 404 status for missing paths
+    "directory": "./out",
+    "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
   }
 }

@@ -1,0 +1,184 @@
+"use client";
+
+import { FormEvent, useState } from "react";
+import Link from "next/link";
+
+export type AreaGoal = "live" | "invest" | "both";
+export type BudgetBand = "b1" | "b2" | "b3" | "b4";
+export type AreaLifestyle = "beach" | "city" | "family" | "value";
+export type PropertyType = "apt" | "villa" | "any";
+export type AreaPriority = "yield" | "growth" | "lifestyle";
+
+export interface AreaAnswers {
+  goal: AreaGoal;
+  budget: BudgetBand;
+  life: AreaLifestyle;
+  type: PropertyType;
+  prio: AreaPriority;
+}
+
+interface AreaProfile {
+  scores: Partial<Record<AreaGoal | AreaLifestyle | PropertyType | AreaPriority, number>>;
+  minBudget: number;
+  fit: string;
+  view: string;
+}
+
+const AREA_PROFILES: Record<string, AreaProfile> = {
+  "Dubai Hills": {
+    scores: { live: 3, both: 2, family: 3, villa: 3, apt: 1, growth: 2, lifestyle: 2 },
+    minBudget: 2,
+    fit: "Families and end-users who want space without leaving the city.",
+    view: "Family tenants drive demand here. Buy on school runs and park access, not just the view.",
+  },
+  "Downtown Dubai": {
+    scores: { invest: 2, both: 2, city: 3, apt: 3, growth: 2, yield: 1, lifestyle: 2 },
+    minBudget: 2,
+    fit: "Buyers who want the global address, and investors in short-let-friendly towers.",
+    view: "Downtown trades on recognition. The premium is real, so building quality and service charges decide the return.",
+  },
+  "Dubai Marina": {
+    scores: { invest: 3, both: 2, beach: 2, city: 2, apt: 3, yield: 3, lifestyle: 2 },
+    minBudget: 1,
+    fit: "Lifestyle buyers and investors wanting an established waterfront address.",
+    view: "Two similar towers can perform very differently. The building, the view line and the service charge make the deal.",
+  },
+  "Business Bay": {
+    scores: { invest: 3, city: 2, value: 2, apt: 3, yield: 3, growth: 1 },
+    minBudget: 1,
+    fit: "Investors and professionals who want Downtown adjacency at a different entry point.",
+    view: "Supply is heavy here, so the gap between average and good buildings is wide. Selection matters more than the postcode.",
+  },
+  "Dubai Islands": {
+    scores: { invest: 2, both: 1, beach: 3, apt: 2, villa: 1, growth: 3 },
+    minBudget: 2,
+    fit: "Early-cycle investors comfortable with a longer horizon.",
+    view: "A patience play. Payment plan, developer track record and handover timeline matter more than the render.",
+  },
+  "Palm Jumeirah": {
+    scores: { live: 2, both: 2, beach: 3, villa: 2, apt: 2, lifestyle: 3, growth: 2 },
+    minBudget: 3,
+    fit: "Trophy buyers and long-term holders.",
+    view: "The Palm is about scarcity. Buy the best line you can afford and think in years, not cycles.",
+  },
+  Dubailand: {
+    scores: { live: 3, family: 3, value: 3, villa: 3, growth: 2, yield: 1 },
+    minBudget: 1,
+    fit: "Families and value-focused end-users.",
+    view: "Judge each community on delivery. Roads, schools and retail arriving on time change everything here.",
+  },
+  "Saadiyat, AD": {
+    scores: { live: 2, both: 1, beach: 2, family: 1, villa: 2, apt: 1, lifestyle: 3, growth: 2 },
+    minBudget: 3,
+    fit: "End-users and investors who want Abu Dhabi's cultural address.",
+    view: "Saadiyat is a different market to Dubai: quieter, supply-controlled and end-user led. Plan accordingly.",
+  },
+};
+
+const BUDGET_RANK: Record<BudgetBand, number> = { b1: 1, b2: 2, b3: 3, b4: 4 };
+
+export interface AreaRecommendation {
+  name: string;
+  points: number;
+  fit: string;
+  view: string;
+}
+
+export function recommendAreas(answers: AreaAnswers): AreaRecommendation[] {
+  const budget = BUDGET_RANK[answers.budget];
+  return Object.entries(AREA_PROFILES)
+    .map(([name, profile]) => {
+      let points = [answers.goal, answers.life, answers.type, answers.prio].reduce(
+        (sum, answer) => sum + (profile.scores[answer] ?? 0),
+        0,
+      );
+      if (answers.type === "any") {
+        points += Math.max(profile.scores.apt ?? 0, profile.scores.villa ?? 0);
+      }
+      if (budget < profile.minBudget) {
+        points -= profile.minBudget - budget >= 2 ? 99 : 4;
+      } else if (budget === profile.minBudget) {
+        points += 1;
+      }
+      return { name, points, fit: profile.fit, view: profile.view };
+    })
+    .sort((a, b) => b.points - a.points)
+    .filter((area) => area.points > -50)
+    .slice(0, 3);
+}
+
+const QUESTIONS = [
+  { name: "goal", legend: "Are you buying to live or invest?", options: [["live", "To live"], ["invest", "To invest"], ["both", "Both"]] },
+  { name: "budget", legend: "Your budget", options: [["b1", "Under AED 1.5M"], ["b2", "AED 1.5M to 3M"], ["b3", "AED 3M to 6M"], ["b4", "AED 6M+"]] },
+  { name: "life", legend: "Lifestyle", options: [["beach", "Beach and waterfront"], ["city", "City energy"], ["family", "Family and green space"], ["value", "Quiet value"]] },
+  { name: "type", legend: "Property type", options: [["apt", "Apartment"], ["villa", "Villa or townhouse"], ["any", "Open to either"]] },
+  { name: "prio", legend: "What matters most?", options: [["yield", "Rental yield"], ["growth", "Capital growth"], ["lifestyle", "Lifestyle first"]] },
+] as const;
+
+export function AreaFinder() {
+  const [answers, setAnswers] = useState<Partial<AreaAnswers>>({});
+  const [results, setResults] = useState<AreaRecommendation[] | null>(null);
+  const [error, setError] = useState("");
+
+  function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (Object.keys(answers).length !== QUESTIONS.length) {
+      setError("Please answer all five questions first.");
+      return;
+    }
+    setError("");
+    setResults(recommendAreas(answers as AreaAnswers));
+  }
+
+  return (
+    <form onSubmit={submit} className="space-y-10">
+      <p className="text-lg text-stone-600">Five questions. Your best-fit areas.</p>
+      {QUESTIONS.map((question, index) => (
+        <fieldset key={question.name} className="space-y-4">
+          <legend className="text-lg font-medium text-stone-950">
+            <span className="mr-3 text-sm tabular-nums text-stone-500">{String(index + 1).padStart(2, "0")}</span>
+            {question.legend}
+          </legend>
+          <div className="flex flex-wrap gap-2">
+            {question.options.map(([value, label]) => {
+              const selected = answers[question.name] === value;
+              return (
+                <label key={value} className={`cursor-pointer rounded-full px-4 py-3 text-sm transition has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 ${selected ? "bg-stone-950 text-white" : "bg-stone-100 text-stone-700 hover:bg-stone-200"}`}>
+                  <input
+                    className="sr-only"
+                    type="radio"
+                    name={question.name}
+                    value={value}
+                    checked={selected}
+                    onChange={() => setAnswers((current) => ({ ...current, [question.name]: value }))}
+                  />
+                  {label}
+                </label>
+              );
+            })}
+          </div>
+        </fieldset>
+      ))}
+      <button type="submit" className="min-h-11 rounded-full bg-stone-950 px-6 py-3 text-sm font-medium text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">
+        Show my areas
+      </button>
+      {error ? <p role="alert" className="text-sm text-red-700">{error}</p> : null}
+      {results ? (
+        <div aria-live="polite" className="space-y-8 bg-stone-100 p-6 sm:p-8">
+          <h3 className="text-2xl font-medium text-stone-950">Your best-fit areas</h3>
+          <ol className="space-y-8">
+            {results.map((area) => (
+              <li key={area.name}>
+                <h4 className="text-lg font-medium text-stone-950">{area.name}</h4>
+                <p className="mt-2 text-stone-600">{area.fit}</p>
+                <p className="mt-2 text-sm text-stone-500">{area.view}</p>
+              </li>
+            ))}
+          </ol>
+          <p className="text-sm text-stone-500">Based on your answers. Iffy weighs service charges, build quality and live launches.</p>
+          <Link href="/?intent=buying#consultation" className="inline-flex min-h-11 items-center rounded-full bg-stone-950 px-5 py-3 text-sm font-medium text-white">Discuss these areas with Iffy</Link>
+        </div>
+      ) : null}
+    </form>
+  );
+}

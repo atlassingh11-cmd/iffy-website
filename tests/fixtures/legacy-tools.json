@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "capturedFrom": "index.html build 2026-07-12-U20",
+  "areaFinder": {
+    "requiredAnswers": ["goal", "budget", "life", "type", "prio"],
+    "budgetRanks": { "b1": 1, "b2": 2, "b3": 3, "b4": 4 },
+    "scores": {
+      "Dubai Hills": { "live": 3, "both": 2, "family": 3, "villa": 3, "apt": 1, "growth": 2, "lifestyle": 2, "minB": 2 },
+      "Downtown Dubai": { "invest": 2, "both": 2, "city": 3, "apt": 3, "growth": 2, "yield": 1, "lifestyle": 2, "minB": 2 },
+      "Dubai Marina": { "invest": 3, "both": 2, "beach": 2, "city": 2, "apt": 3, "yield": 3, "lifestyle": 2, "minB": 1 },
+      "Business Bay": { "invest": 3, "city": 2, "value": 2, "apt": 3, "yield": 3, "growth": 1, "minB": 1 },
+      "Dubai Islands": { "invest": 2, "both": 1, "beach": 3, "apt": 2, "villa": 1, "growth": 3, "minB": 2 },
+      "Palm Jumeirah": { "live": 2, "both": 2, "beach": 3, "villa": 2, "apt": 2, "lifestyle": 3, "growth": 2, "minB": 3 },
+      "Dubailand": { "live": 3, "family": 3, "value": 3, "villa": 3, "growth": 2, "yield": 1, "minB": 1 },
+      "Saadiyat, AD": { "live": 2, "both": 1, "beach": 2, "family": 1, "villa": 2, "apt": 1, "lifestyle": 3, "growth": 2, "minB": 3 }
+    },
+    "budgetRule": "Exclude an area when its minimum budget is two or more bands above the visitor budget, subtract four points when it is one band above, and add one point at the minimum band.",
+    "cases": [
+      {
+        "answers": { "goal": "live", "budget": "b2", "life": "family", "type": "villa", "prio": "lifestyle" },
+        "expected": ["Dubai Hills", "Dubailand", "Saadiyat, AD"]
+      },
+      {
+        "answers": { "goal": "invest", "budget": "b1", "life": "city", "type": "apt", "prio": "yield" },
+        "expected": ["Dubai Marina", "Business Bay", "Downtown Dubai"]
+      },
+      {
+        "answers": { "goal": "both", "budget": "b4", "life": "beach", "type": "any", "prio": "growth" },
+        "expected": ["Dubai Islands", "Palm Jumeirah", "Dubai Hills"]
+      }
+    ],
+    "caveat": "Based on your answers. Iffy weighs service charges, build quality and live launches."
+  },
+  "budgetCalculator": {
+    "minimumPrice": 100000,
+    "readyPurchase": {
+      "dld": "price * 0.04 + 580",
+      "trustee": "4200 when price >= 500000, otherwise 2100",
+      "agency": "price * 0.021",
+      "firstHomeDownPayment": "20% below AED 5M, otherwise 30%",
+      "investmentDownPayment": "40%",
+      "mortgageRegistration": "loan * 0.0025 + 290",
+      "bankArrangement": "loan * 0.01",
+      "valuation": 3150
+    },
+    "offPlan": {
+      "initialPaymentOptions": [10, 20, 30],
+      "dld": "price * 0.04",
+      "registrationAdmin": 1100
+    },
+    "cases": [
+      { "input": { "price": 1000000, "type": "ready", "funding": "cash", "purpose": "first" }, "expectedTotal": 1065780 },
+      { "input": { "price": 2000000, "type": "ready", "funding": "mortgage", "purpose": "first" }, "expectedTotal": 550220 },
+      { "input": { "price": 2000000, "type": "ready", "funding": "mortgage", "purpose": "invest" }, "expectedTotal": 945220 },
+      { "input": { "price": 6000000, "type": "ready", "funding": "mortgage", "purpose": "first" }, "expectedTotal": 2226720 },
+      { "input": { "price": 2000000, "type": "offplan", "initialPaymentPercent": 10 }, "expectedTotal": 281100 },
+      { "input": { "price": 2000000, "type": "offplan", "initialPaymentPercent": 20 }, "expectedTotal": 481100 },
+      { "input": { "price": 2000000, "type": "offplan", "initialPaymentPercent": 30 }, "expectedTotal": 681100 }
+    ],
+    "caveat": "Indicative only, based on published fees and standard UAE Central Bank rules. Fees and government charges should be confirmed at the time of purchase. Not financial advice."
+  },
+  "offPlanReady": {
+    "requiredAnswers": ["when", "income", "pay", "risk", "appeal"],
+    "balancedThreshold": 1,
+    "cases": [
+      {
+        "answers": { "when": "now", "income": "yes", "pay": "staged", "risk": "low", "appeal": "new" },
+        "expected": "Ready property looks like the better fit"
+      },
+      {
+        "answers": { "when": "flex", "income": "no", "pay": "staged", "risk": "high", "appeal": "new" },
+        "expected": "Off-plan looks like the better fit"
+      },
+      {
+        "answers": { "when": "flex", "income": "yes", "pay": "once", "risk": "high", "appeal": "est" },
+        "expected": "It’s genuinely balanced"
+      }
+    ],
+    "caveat": "A guide, not advice. Off-plan carries construction and delivery risk; ready stock carries pricing and condition risk. Both are manageable with the right due diligence."
+  }
+}

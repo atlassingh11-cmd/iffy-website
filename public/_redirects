@@ -1,0 +1,43 @@
+# Preserve public repository asset URLs while the generated site uses /media/.
+/404 /this-route-does-not-exist 302
+/404/ /this-route-does-not-exist 302
+/404.html /this-route-does-not-exist 302
+
+/assets/images/apple-touch-icon.png /media/apple-touch-icon.png 301
+/assets/images/business-bay.webp /media/business-bay.webp 301
+/assets/images/downtown.webp /media/downtown.webp 301
+/assets/images/dubai-hills.webp /media/dubai-hills.webp 301
+/assets/images/dubai-islands.webp /media/dubai-islands.webp 301
+/assets/images/dubai-marina.webp /media/dubai-marina.webp 301
+/assets/images/fallback-iffy.jpg /media/fallback-iffy.jpg 301
+/assets/images/favicon-192.png /media/favicon-192.png 301
+/assets/images/favicon-32.png /media/favicon-32.png 301
+/assets/images/favicon.svg /media/favicon.svg 301
+/assets/images/hero-downtown.webp /media/hero-downtown.webp 301
+/assets/images/hero-interior.webp /media/hero-interior.webp 301
+/assets/images/hero-marina.webp /media/hero-marina.webp 301
+/assets/images/hero-palm.webp /media/hero-palm.webp 301
+/assets/images/iffy-event.webp /media/iffy-event.webp 301
+/assets/images/iffy-laptop.webp /media/iffy-laptop.webp 301
+/assets/images/iffykhan-og.jpg /media/iffykhan-og.jpg 301
+/assets/images/kamani-guest-1.webp /media/kamani-guest-1.webp 301
+/assets/images/kamani-guest-2.webp /media/kamani-guest-2.webp 301
+/assets/images/kamani-guest-3.webp /media/kamani-guest-3.webp 301
+/assets/images/og-areas/business-bay.jpg /media/og-areas/business-bay.jpg 301
+/assets/images/og-areas/downtown-dubai.jpg /media/og-areas/downtown-dubai.jpg 301
+/assets/images/og-areas/dubai-hills.jpg /media/og-areas/dubai-hills.jpg 301
+/assets/images/og-areas/dubai-islands.jpg /media/og-areas/dubai-islands.jpg 301
+/assets/images/og-areas/dubai-marina.jpg /media/og-areas/dubai-marina.jpg 301
+/assets/images/og-areas/dubailand.jpg /media/og-areas/dubailand.jpg 301
+/assets/images/og-areas/palm-jumeirah.jpg /media/og-areas/palm-jumeirah.jpg 301
+/assets/images/og-areas/saadiyat-island.jpg /media/og-areas/saadiyat-island.jpg 301
+/assets/images/palm-jumeirah.webp /media/palm-jumeirah.webp 301
+/assets/images/saadiyat.webp /media/saadiyat.webp 301
+/assets/images/the-wilds.webp /media/the-wilds.webp 301
+/assets/videos/iffy-hero.mp4 /media/iffy-hero.mp4 301
+
+# Consolidated editorial sequences retain a relevant local fallback.
+/assets/images/palm-before.webp /media/palm-jumeirah.webp 301
+/assets/images/palm-complete.webp /media/palm-jumeirah.webp 301
+/assets/images/palm-lifestyle.webp /media/palm-jumeirah.webp 301
+/assets/images/the-edit.webp /media/hero-interior.webp 301

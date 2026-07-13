@@ -1,0 +1,19 @@
+# The Worker preview must never be indexed.
+https://new-sitetest.atlassingh11.workers.dev/*
+  X-Robots-Tag: noindex
+
+# Next emits content-hashed framework assets.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Stable media names are cached conservatively so corrections propagate.
+/media/*
+  Cache-Control: public, max-age=2592000
+
+# Security headers apply to pages and assets.
+/*
+  Strict-Transport-Security: max-age=15552000
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
