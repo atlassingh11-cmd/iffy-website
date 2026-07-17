@@ -4,7 +4,7 @@
 <script>document.documentElement.classList.add("js");document.addEventListener("DOMContentLoaded",function(){requestAnimationFrame(function(){document.body.classList.add("loaded")})});</script>
 <meta charset="UTF-8">
 <script>(function(){var h=location.hostname;if(!/(^|\.)iffykhan\.ae$/.test(h)){var m=document.createElement('meta');m.name='robots';m.content='noindex,nofollow';document.head.appendChild(m);}})();</script>
-<meta name="build" content="2026-07-17-U27">
+<meta name="build" content="2026-07-17-U28">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Iffy Khan | Dubai &amp; Abu Dhabi Property Advisory</title>
 <meta name="description" content="Buy, sell and invest in Dubai and Abu Dhabi property with Iffy Khan. Advisory-led guidance across off-plan, ready homes, resale and investment opportunities.">
@@ -247,13 +247,35 @@
 </section>
 
 <section class="section devs-ed" id="developments">
-  <style>@media(max-width:860px){.devs-ed .ed{aspect-ratio:auto;min-height:0}.devs-ed .ed-body{padding-top:clamp(7rem,40vw,11rem)}}</style>
+  <style>
+.ed-track{display:contents}
+@media(max-width:860px){
+ .devs-ed .ed{aspect-ratio:auto;min-height:0}
+ .devs-ed .ed-body{padding-top:clamp(7rem,40vw,11rem)}
+ .ed-track{display:flex;gap:14px;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;margin-inline:calc(50% - 50vw);padding:0 max(20px,calc(50vw - 50%)) 10px;scrollbar-width:none}
+ .ed-track::-webkit-scrollbar{display:none}
+ .ed-track .ed{flex:0 0 85%;scroll-snap-align:center;margin-bottom:0}
+ .ed-track .ed:last-child{margin-bottom:0}
+}
+@media(max-width:1020px){
+ .comm-list{flex-direction:row;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:.6rem;border-top:none;padding:.2rem .1rem .7rem;scroll-snap-type:x proximity;scrollbar-width:none}
+ .comm-list::-webkit-scrollbar{display:none}
+ .comm-list .crow{flex:0 0 auto;width:auto;flex-direction:column;align-items:flex-start;gap:.3rem;padding:.8rem 1.05rem;border:1px solid var(--line);border-radius:14px;border-bottom:1px solid var(--line);scroll-snap-align:start}
+ .comm-list .crow::after{display:none}
+ .comm-list .crow:hover,.comm-list .crow.on{padding-left:1.05rem}
+ .comm-list .crow.on{background:rgba(216,195,165,.12);border-color:var(--gold-deep)}
+ .comm-list .crow .an{font-size:1.02rem;white-space:nowrap}
+ .comm-list .crow .at{font-size:.58rem;white-space:nowrap}
+ .comm-wrap .comm-right{margin-top:1.1rem}
+}
+</style>
   <div class="wrap">
     <div class="s-head">
       <span class="eyebrow reveal">Property Routes</span>
       <h2 class="reveal" data-d="1">Property routes worth a closer look.</h2>
       <p class="reveal" data-d="2">A focused look at the types of Dubai and Abu Dhabi opportunities Iffy can help clients compare, from family communities to waterfront and branded addresses.</p>
     </div>
+    <div class="ed-track">
     <article class="ed reveal">
       <img loading="lazy" width="1600" height="718" src="assets/images/route-the-wilds-residences.webp" alt="The Wilds Residences by Aldar — lagoon pool and apartment buildings with the Dubai skyline beyond (render)" onerror="window.imgMissing?imgMissing(this):(this.alt+=' [missing]')">
       <div class="ed-body">
@@ -282,6 +304,7 @@
         <div style="display:flex;gap:.8rem;flex-wrap:wrap"><a href="/projects/the-row-saadiyat" class="plink">View full project details</a><a href="https://wa.me/971585802689?text=Hi%20Iffy%2C%20I%27d%20like%20to%20ask%20about%20The%20Row%20Saadiyat%20by%20Aldar." target="_blank" rel="noopener" class="plink">Discuss this route with Iffy</a></div>
       </div>
     </article>
+    </div>
   </div>
 </section>
 
@@ -757,13 +780,9 @@ var commWrap=document.querySelector('.comm-wrap');
 var accMQ=window.matchMedia('(max-width:1020px)');
 var curComm=0;
 function placePanel(i,animate){
-  if(accMQ.matches){
-    var row=cRows[i];
-    if(row.nextElementSibling!==commRight)row.insertAdjacentElement('afterend',commRight);
-    if(animate){commRight.classList.remove('acc-anim');void commRight.offsetWidth;commRight.classList.add('acc-anim');}
-  }else if(commRight.parentElement!==commWrap){
-    commWrap.appendChild(commRight);commRight.classList.remove('acc-anim');
-  }
+  if(commRight.parentElement!==commWrap){commWrap.appendChild(commRight);}
+  if(accMQ.matches&&animate){commRight.classList.remove('acc-anim');void commRight.offsetWidth;commRight.classList.add('acc-anim');}
+  if(!accMQ.matches)commRight.classList.remove('acc-anim');
 }
 if(accMQ.addEventListener)accMQ.addEventListener('change',function(){placePanel(curComm,false);});
 /* belt-and-braces: some browsers delay matchMedia change events on rotate/resize */
@@ -784,6 +803,7 @@ function setComm(i){
   var gl=document.getElementById('ccGuide');
   if(gl){if(a.u){gl.href=a.u;gl.style.display='';}else{gl.style.display='none';}}
   placePanel(i,true);
+  if(accMQ.matches&&cRows[i]&&cRows[i].scrollIntoView){try{cRows[i].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});}catch(e){}}
 }
 commList.addEventListener('keydown',function(e){
   var cur=Array.prototype.indexOf.call(cRows,document.activeElement);
